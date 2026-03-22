@@ -2,14 +2,14 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bali Legal Command Center v6</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --bg:#08080e;--s1:rgba(255,255,255,0.035);--s2:rgba(255,255,255,0.06);--s3:rgba(255,255,255,0.1);
-  --b:rgba(255,255,255,0.08);--t:#eef;--t2:#aab;--t3:#667;
+  --b:rgba(255,255,255,0.08);--t:#eef;--t2:#bbc;--t3:#889;
   --a:#818cf8;--r:#f87171;--am:#fbbf24;--g:#34d399;--bl:#60a5fa;--p:#c084fc;
   --ad:rgba(129,140,248,.12);--rd:rgba(248,113,113,.1);--amd:rgba(251,191,36,.1);--gd:rgba(52,211,153,.1);--bld:rgba(96,165,250,.1);--pd:rgba(192,132,252,.1)
 }
@@ -34,13 +34,13 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .hero h1{font-size:18px;font-weight:700;letter-spacing:-.3px;margin-bottom:2px}
 @media(min-width:640px){.hero h1{font-size:22px}}
 .hero p{color:var(--t3);font-size:11px}
-.pill{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:100px;margin-bottom:8px}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:8px}
 
 /* COUNTDOWN */
 .cd{display:flex;gap:8px;justify-content:center;margin-top:12px}
 .cd-i{text-align:center}
 .cd-n{font-size:24px;font-weight:800;color:var(--r);line-height:1}
-.cd-l{font-size:8px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);margin-top:2px}
+.cd-l{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);margin-top:2px}
 .cd-s{font-size:20px;color:var(--t3);line-height:1.2;font-weight:300}
 
 /* KPI */
@@ -48,15 +48,15 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 @media(min-width:500px){.kpi-g{grid-template-columns:repeat(4,1fr)}}
 .kpi{background:var(--s1);border:1px solid var(--b);border-radius:12px;padding:12px;text-align:center;position:relative;overflow:hidden}
 .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
-.kpi-l{font-size:8px;text-transform:uppercase;letter-spacing:.8px;color:var(--t3);margin-bottom:2px}
+.kpi-l{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--t3);margin-bottom:2px}
 .kpi-v{font-size:18px;font-weight:800;letter-spacing:-.5px}
-.kpi-n{font-size:9px;color:var(--t3);margin-top:1px}
+.kpi-n{font-size:10px;color:var(--t3);margin-top:1px}
 
 /* CARDS */
 .c{background:var(--s1);border:1px solid var(--b);border-radius:14px;padding:16px;margin-bottom:12px}
 .c-t{font-size:13px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .ico{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
-.badge{display:inline-block;font-size:8px;font-weight:700;padding:2px 7px;border-radius:100px;letter-spacing:.3px;text-transform:uppercase;vertical-align:middle}
+.badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 8px;border-radius:100px;letter-spacing:.3px;text-transform:uppercase;vertical-align:middle}
 .b-r{background:var(--rd);color:var(--r)}.b-a{background:var(--amd);color:var(--am)}.b-g{background:var(--gd);color:var(--g)}.b-b{background:var(--bld);color:var(--bl)}.b-p{background:var(--pd);color:var(--p)}
 
 /* ALERT */
@@ -68,7 +68,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 
 /* PROGRESS */
 .prg{margin-bottom:14px}
-.prg-l{display:flex;justify-content:space-between;font-size:10px;color:var(--t3);margin-bottom:4px}
+.prg-l{display:flex;justify-content:space-between;font-size:11px;color:var(--t3);margin-bottom:4px}
 .prg-b{height:5px;background:var(--s2);border-radius:100px;overflow:hidden}
 .prg-f{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--a),var(--g));transition:width .4s}
 
@@ -80,14 +80,14 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .stp.dn .s-ck{background:var(--gd);border-color:var(--g);color:var(--g)}
 .s-tx{flex:1;min-width:0}
 .s-tt{font-size:12px;font-weight:600;margin-bottom:1px}
-.s-ds{font-size:10px;color:var(--t3);line-height:1.5}
+.s-ds{font-size:11px;color:var(--t3);line-height:1.5}
 .s-meta{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
-.tag{font-size:8px;padding:2px 7px;border-radius:100px;font-weight:600;letter-spacing:.3px;white-space:nowrap}
+.tag{font-size:10px;padding:3px 8px;border-radius:100px;font-weight:600;letter-spacing:.3px;white-space:nowrap}
 
 /* PHASE HEADER */
 .ph{display:flex;align-items:center;gap:8px;margin:16px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--b)}
 .ph-t{font-size:13px;font-weight:700;flex:1}
-.ph-d{font-size:10px;color:var(--t3)}
+.ph-d{font-size:11px;color:var(--t3)}
 
 /* ACCORDION */
 .ac{border:1px solid var(--b);border-radius:10px;overflow:hidden;margin-bottom:4px}
@@ -96,23 +96,23 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .ac summary::before{content:'›';font-size:14px;color:var(--t3);transition:transform .15s;width:10px;text-align:center;flex-shrink:0}
 .ac[open] summary::before{transform:rotate(90deg)}
 .ac-b{padding:10px 14px;font-size:11px;color:var(--t2);line-height:1.65;border-top:1px solid var(--b)}
-.ac-d{font-size:9px;color:var(--t3);font-weight:600;flex-shrink:0;min-width:55px}
+.ac-d{font-size:10px;color:var(--t3);font-weight:600;flex-shrink:0;min-width:55px}
 
 /* CLAIM */
 .cl{background:var(--s2);border:1px solid var(--b);border-radius:10px;padding:14px;margin-bottom:8px}
 .cl-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .cl-nm{font-weight:600;font-size:12px;flex:1}
 .cl-am{font-size:18px;font-weight:800;white-space:nowrap;flex-shrink:0}
-.cl-bs{font-size:10px;color:var(--t3);line-height:1.6;margin-top:4px}
+.cl-bs{font-size:11px;color:var(--t3);line-height:1.6;margin-top:4px}
 
 /* ANLAGEN */
 .af{display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap}
-.af button{font-size:9px;padding:4px 9px;border-radius:100px;border:1px solid var(--b);background:transparent;color:var(--t3);cursor:pointer;font-family:inherit;font-weight:500;transition:all .15s}
+.af button{font-size:10px;padding:4px 9px;border-radius:100px;border:1px solid var(--b);background:transparent;color:var(--t3);cursor:pointer;font-family:inherit;font-weight:500;transition:all .15s}
 .af button:hover,.af button.on{background:var(--ad);color:var(--a);border-color:rgba(129,140,248,.3)}
 .an{display:grid;grid-template-columns:30px 1fr auto;gap:8px;align-items:center;padding:8px 10px;background:var(--s2);border:1px solid var(--b);border-radius:6px;margin-bottom:3px;font-size:11px}
-.an-nr{font-weight:700;color:var(--a);font-size:10px;text-align:center}
+.an-nr{font-weight:700;color:var(--a);font-size:11px;text-align:center}
 .an-nm{font-weight:500;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.an-ds{font-size:9px;color:var(--t3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.an-ds{font-size:10px;color:var(--t3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* TOTAL */
 .tot{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:12px;background:linear-gradient(135deg,rgba(129,140,248,.1),rgba(52,211,153,.06));border:1px solid rgba(129,140,248,.18);margin-top:10px}
@@ -122,49 +122,55 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 /* SCHREIBEN */
 .brief{background:var(--s1);border:1px solid var(--b);border-radius:12px;overflow:hidden;margin-bottom:10px}
 .brief-h{padding:12px 14px;background:var(--s2);display:flex;justify-content:space-between;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.brief-h::after{content:'Kopieren';font-size:9px;padding:3px 10px;background:var(--ad);color:var(--a);border-radius:100px;font-weight:600}
+.brief-h::after{content:'Kopieren';font-size:10px;padding:3px 10px;background:var(--ad);color:var(--a);border-radius:100px;font-weight:600}
 .brief-t{font-size:12px;font-weight:600}
-.brief-sub{font-size:9px;color:var(--t3)}
+.brief-sub{font-size:10px;color:var(--t3)}
 .brief-body{padding:14px;font-size:11px;color:var(--t2);line-height:1.7;white-space:pre-wrap;font-family:'Inter',sans-serif;max-height:400px;overflow-y:auto;display:none}
 .brief.open .brief-body{display:block}
 .brief.open .brief-h::after{content:'Schließen'}
 
 /* TABLE */
 table{width:100%;border-collapse:separate;border-spacing:0;font-size:11px}
-th{text-align:left;padding:6px 10px;background:var(--s2);color:var(--t3);font-weight:600;font-size:9px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--b)}
+th{text-align:left;padding:6px 10px;background:var(--s2);color:var(--t3);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--b)}
 td{padding:8px 10px;border-bottom:1px solid var(--b);vertical-align:top}
 tr:last-child td{border-bottom:none}
 
-.ft{text-align:center;padding:20px 12px;font-size:9px;color:var(--t3);border-top:1px solid var(--b);margin-top:20px;line-height:1.6}
+.ft{text-align:center;padding:20px 12px;font-size:10px;color:var(--t3);border-top:1px solid var(--b);margin-top:20px;line-height:1.6}
 strong{color:var(--t)}
 
 /* Accessibility */
 :focus-visible{outline:2px solid var(--a);outline-offset:2px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.skip{position:absolute;left:-9999px;top:0;z-index:999;background:var(--a);color:#fff;padding:8px 16px;font-size:13px;border-radius:0 0 8px 0;font-weight:600}
+.skip:focus{left:0}
+.stp:focus-visible,.brief:focus-visible{outline:2px solid var(--a);outline-offset:2px;border-radius:10px}
+.nb{min-height:44px;min-width:44px;display:flex;align-items:center;justify-content:center}
+.af button{min-height:36px}
 </style>
 </head>
 <body>
-<div class="w">
+<a href="#main-content" class="skip">Zum Inhalt springen</a>
+<div class="w" id="main-content" role="main">
 
 <!-- STICKY NAV -->
-<div class="nav"><div class="nav-inner" role="tablist">
-  <button class="nb on" data-p="overview" role="tab" aria-selected="true">Übersicht</button>
-  <button class="nb" data-p="fahrplan" role="tab">Fahrplan</button>
-  <button class="nb" data-p="workflow" role="tab">Schreiben</button>
-  <button class="nb" data-p="anlagen" role="tab">Anlagen</button>
-  <button class="nb" data-p="recht" role="tab">Ansprüche</button>
-</div></div>
+<nav class="nav" aria-label="Hauptnavigation"><div class="nav-inner" role="tablist" aria-label="Seitennavigation">
+  <button class="nb on" data-p="overview" role="tab" aria-selected="true" aria-controls="p-overview" id="tab-overview">Übersicht</button>
+  <button class="nb" data-p="fahrplan" role="tab" aria-selected="false" aria-controls="p-fahrplan" id="tab-fahrplan">Fahrplan</button>
+  <button class="nb" data-p="workflow" role="tab" aria-selected="false" aria-controls="p-workflow" id="tab-workflow">Schreiben</button>
+  <button class="nb" data-p="anlagen" role="tab" aria-selected="false" aria-controls="p-anlagen" id="tab-anlagen">Anlagen</button>
+  <button class="nb" data-p="recht" role="tab" aria-selected="false" aria-controls="p-recht" id="tab-recht">Ansprüche</button>
+</div></nav>
 
 <!-- ══════════════════════════════════════ -->
 <!-- PAGE: ÜBERSICHT                        -->
 <!-- ══════════════════════════════════════ -->
-<div class="pg on" id="p-overview">
+<div class="pg on" id="p-overview" role="tabpanel" aria-labelledby="tab-overview">
 
 <div class="hero">
   <div class="pill" style="background:var(--rd);color:var(--r);border:1px solid rgba(248,113,113,.18)">⏱ Frist: 27. März 2026</div>
   <h1>Bali Stranding – Legal Command Center</h1>
   <p>Gasperetti & Suryadi vs. Qatar / Gotogate / Booking.com · Emirates (separat)</p>
-  <p style="margin-top:2px">v6 · 22.03.2026 · 27 Beweisstücke · Rechtlich verifiziert</p>
+  <p style="margin-top:2px">v6.1 · 22.03.2026 · 27 Beweisstücke · Rechtlich verifiziert · WCAG 2.1 AA</p>
   <div class="cd" id="cd">
     <div class="cd-i"><div class="cd-n" id="cd-d">5</div><div class="cd-l">Tage</div></div>
     <div class="cd-s">:</div>
@@ -172,7 +178,7 @@ strong{color:var(--t)}
     <div class="cd-s">:</div>
     <div class="cd-i"><div class="cd-n" id="cd-m">00</div><div class="cd-l">Min</div></div>
   </div>
-  <p style="font-size:9px;color:var(--t3);margin-top:4px">bis Gotogate-Frist (27.03.)</p>
+  <p style="font-size:10px;color:var(--t3);margin-top:4px">bis Gotogate-Frist (27.03.)</p>
 </div>
 
 <div class="kpi-g">
@@ -222,7 +228,7 @@ strong{color:var(--t)}
 <!-- ══════════════════════════════════════ -->
 <!-- PAGE: FAHRPLAN                         -->
 <!-- ══════════════════════════════════════ -->
-<div class="pg" id="p-fahrplan">
+<div class="pg" id="p-fahrplan" role="tabpanel" aria-labelledby="tab-fahrplan">
 <div class="prg"><div class="prg-l"><span>Fortschritt</span><span id="pp">0%</span></div><div class="prg-b"><div class="prg-f" id="pf" style="width:0%"></div></div></div>
 
 <div class="ph"><span class="badge b-r">Phase 1</span><span class="ph-t">Sofort</span><span class="ph-d">22.–26.3.</span></div>
@@ -261,11 +267,11 @@ strong{color:var(--t)}
 <!-- ══════════════════════════════════════ -->
 <!-- PAGE: SCHREIBEN (WORKFLOW)             -->
 <!-- ══════════════════════════════════════ -->
-<div class="pg" id="p-workflow">
+<div class="pg" id="p-workflow" role="tabpanel" aria-labelledby="tab-workflow">
 <div class="c"><div class="c-t"><div class="ico" style="background:var(--gd)">✉️</div> Vorgefertigte Schreiben</div><p style="font-size:11px;color:var(--t3)">Klick zum Öffnen → Text kopieren → anpassen → senden. Anlagen-Nummern verweisen auf Tab „Anlagen".</p></div>
 
 <!-- SCHREIBEN 1: Emirates -->
-<div class="brief" onclick="this.classList.toggle('open')">
+<div class="brief">
   <div class="brief-h"><div><div class="brief-t">1. Emirates-Forderung (MÜ Art. 19)</div><div class="brief-sub">~766 EUR · Per E-Mail + Einschreiben · Sofort</div></div></div>
   <div class="brief-body">An: customer.affairs@emirates.com
 Betreff: Schadensersatzforderung wegen Flugverspätung – Buchung EM8Q2B / EK369 DPS→DXB, 16.03.2026
@@ -309,7 +315,7 @@ Laura Gasperetti & Darius Suryadi</div>
 </div>
 
 <!-- SCHREIBEN 2: 2. Mahnung Gotogate -->
-<div class="brief" onclick="this.classList.toggle('open')">
+<div class="brief">
   <div class="brief-h"><div><div class="brief-t">2. Zweite Mahnung Gotogate/Booking.com</div><div class="brief-sub">Bezifferte Forderung + LTA · Am 27.3. senden</div></div></div>
   <div class="brief-body">An: schedulechange@flightsonbooking.gotogate.support
 CC: customer.service@booking.com, ds@beryl-holding.de, gasperetti.laura@gmail.com
@@ -358,7 +364,7 @@ Laura Gasperetti & Darius Suryadi</div>
 </div>
 
 <!-- SCHREIBEN 3: Qatar Airways -->
-<div class="brief" onclick="this.classList.toggle('open')">
+<div class="brief">
   <div class="brief-h"><div><div class="brief-t">3. Bezifferte Forderung Qatar Airways</div><div class="brief-sub">Erstattung + Ausgleich + Betreuung · Bis 28.3.</div></div></div>
   <div class="brief-body">An: tell-us@qatarairways.com.qa
 Betreff: Bezifferte Schadensersatzforderung | Case CAS-735359-C7H8M9 | PNR YO9OOR | 2 Passagiere
@@ -422,7 +428,7 @@ Laura Gasperetti & Darius Suryadi</div>
 <!-- ══════════════════════════════════════ -->
 <!-- PAGE: ANLAGEN                          -->
 <!-- ══════════════════════════════════════ -->
-<div class="pg" id="p-anlagen">
+<div class="pg" id="p-anlagen" role="tabpanel" aria-labelledby="tab-anlagen">
 <div class="af" id="afl">
   <button class="on" data-f="all">Alle (27)</button>
   <button data-f="k1">K1: Qatar</button>
@@ -465,7 +471,7 @@ Laura Gasperetti & Darius Suryadi</div>
 <!-- ══════════════════════════════════════ -->
 <!-- PAGE: ANSPRÜCHE (DETAIL)               -->
 <!-- ══════════════════════════════════════ -->
-<div class="pg" id="p-recht">
+<div class="pg" id="p-recht" role="tabpanel" aria-labelledby="tab-recht">
 <div class="c">
   <div class="c-t"><div class="ico" style="background:var(--gd)">⚖️</div> Rechtliche Grundlagen – Verifiziert</div>
   <p style="font-size:11px;color:var(--t3);margin-bottom:12px">Geprüft gegen CJEU-Rechtsprechung, BGH-Urteile 2023, Montrealer Übereinkommen und § 651w BGB. Schwachstellen ehrlich markiert.</p>
@@ -485,7 +491,7 @@ Laura Gasperetti & Darius Suryadi</div>
 
 <div class="cl" style="border-color:rgba(192,132,252,.25)"><div class="cl-top"><div class="cl-nm">7. Emirates Delay MÜ Art. 19 <span class="badge b-p">separat</span></div><div class="cl-am" style="color:var(--p)">~766€</div></div><div class="cl-bs"><strong>⚠️ NICHT EU-VO 261/2004</strong> – DPS ist kein EU-Flughafen, Emirates keine EU-Airline. Art. 3(1) EU-VO nicht erfüllt. → <strong>Montrealer Übereinkommen Art. 19:</strong> Nur bewiesene Schäden erstattungsfähig (kein Pauschalbetrag). Waldorf ~574 + SIXT 70 + Nebenkosten 122 = ~766€. <strong>Emirates-Verteidigung:</strong> „Alle zumutbaren Maßnahmen" (weicherer Standard als EU-VO). <strong>Risiko:</strong> Mittel – Emirates könnte ATC-Probleme anführen. Aber Delay von ~8h ist erheblich.</div></div>
 
-<div class="tot"><div><div class="tot-l">Konservativ (sicher + stark)</div><div style="font-size:9px;color:var(--t3)">Erstattung + Differenz + Betreuung + Emirates</div></div><div class="tot-v" style="font-size:18px">~4.669€</div></div>
+<div class="tot"><div><div class="tot-l">Konservativ (sicher + stark)</div><div style="font-size:10px;color:var(--t3)">Erstattung + Differenz + Betreuung + Emirates</div></div><div class="tot-v" style="font-size:18px">~4.669€</div></div>
 <div class="tot" style="margin-top:6px"><div><div class="tot-l">+ Streitige Positionen (EU-261 Ausgleich)</div></div><div class="tot-v" style="font-size:18px">~5.869€</div></div>
 <div class="tot" style="margin-top:6px;background:linear-gradient(135deg,rgba(52,211,153,.12),rgba(129,140,248,.08));border-color:rgba(52,211,153,.2)"><div><div class="tot-l">Maximiert (+ LTA + Vermittlerhaftung + Anwalt)</div></div><div class="tot-v">12.000–18.000+€</div></div>
 
@@ -494,19 +500,31 @@ Laura Gasperetti & Darius Suryadi</div>
 
 <div class="ft">
   <strong>Hinweis:</strong> Keine Rechtsberatung i.S.d. RDG. Anwaltliche Prüfung empfohlen.<br>
-  v6 · 22.03.2026 · Rechtlich verifiziert · Gasperetti & Suryadi
+  v6.1 · 22.03.2026 · Rechtlich verifiziert · WCAG 2.1 AA · Gasperetti & Suryadi
 </div>
 </div><!-- /wrap -->
 
 <script>
 // TABS
-document.querySelectorAll('.nb').forEach(b=>{
-  b.addEventListener('click',()=>{
-    document.querySelectorAll('.nb').forEach(x=>{x.classList.remove('on');x.setAttribute('aria-selected','false')});
-    document.querySelectorAll('.pg').forEach(x=>x.classList.remove('on'));
-    b.classList.add('on');b.setAttribute('aria-selected','true');
-    document.getElementById('p-'+b.dataset.p).classList.add('on');
-    window.scrollTo({top:0,behavior:'smooth'});
+const tabs=document.querySelectorAll('.nb');
+function switchTab(b){
+  tabs.forEach(x=>{x.classList.remove('on');x.setAttribute('aria-selected','false');x.setAttribute('tabindex','-1')});
+  document.querySelectorAll('.pg').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');b.setAttribute('aria-selected','true');b.setAttribute('tabindex','0');
+  document.getElementById('p-'+b.dataset.p).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+tabs.forEach((b,i)=>{
+  b.setAttribute('tabindex',b.classList.contains('on')?'0':'-1');
+  b.addEventListener('click',()=>switchTab(b));
+  b.addEventListener('keydown',e=>{
+    let idx=i;
+    if(e.key==='ArrowRight'){idx=(i+1)%tabs.length;e.preventDefault()}
+    else if(e.key==='ArrowLeft'){idx=(i-1+tabs.length)%tabs.length;e.preventDefault()}
+    else if(e.key==='Home'){idx=0;e.preventDefault()}
+    else if(e.key==='End'){idx=tabs.length-1;e.preventDefault()}
+    else return;
+    switchTab(tabs[idx]);tabs[idx].focus();
   });
 });
 
@@ -531,6 +549,18 @@ function up(){
 function sv(){const s=[];document.querySelectorAll('.stp').forEach((e,i)=>s.push(e.classList.contains('dn')?1:0));try{localStorage.setItem('fp6',JSON.stringify(s))}catch(e){}}
 function ld(){try{const s=JSON.parse(localStorage.getItem('fp6'));if(s)document.querySelectorAll('.stp').forEach((e,i)=>{if(s[i])e.classList.add('dn')})}catch(e){}up()}
 ld();
+
+// KEYBOARD: Steps + Briefs
+document.querySelectorAll('.stp[onclick]').forEach(s=>{
+  s.setAttribute('tabindex','0');s.setAttribute('role','checkbox');s.setAttribute('aria-checked',s.classList.contains('dn')?'true':'false');
+  s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();s.click();s.setAttribute('aria-checked',s.classList.contains('dn')?'true':'false')}});
+});
+document.querySelectorAll('.brief').forEach(b=>{
+  b.setAttribute('tabindex','0');b.setAttribute('role','button');b.setAttribute('aria-expanded','false');
+  function toggleBrief(){b.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open')?'true':'false')}
+  b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleBrief()}});
+  b.querySelector('.brief-h').addEventListener('click',toggleBrief);
+});
 
 // ANLAGEN FILTER
 document.querySelectorAll('#afl button').forEach(b=>{
