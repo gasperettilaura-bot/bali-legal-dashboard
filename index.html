@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bali Legal Command Center v6</title>
+<title>Bali Legal Command Center v6.3</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
@@ -155,8 +155,7 @@ strong{color:var(--t)}
 <!-- STICKY NAV -->
 <nav class="nav" aria-label="Hauptnavigation"><div class="nav-inner" role="tablist" aria-label="Seitennavigation">
   <button class="nb on" data-p="overview" role="tab" aria-selected="true" aria-controls="p-overview" id="tab-overview">Übersicht</button>
-  <button class="nb" data-p="fahrplan" role="tab" aria-selected="false" aria-controls="p-fahrplan" id="tab-fahrplan">Fahrplan</button>
-  <button class="nb" data-p="workflow" role="tab" aria-selected="false" aria-controls="p-workflow" id="tab-workflow">Schreiben</button>
+  <button class="nb" data-p="vorgehen" role="tab" aria-selected="false" aria-controls="p-vorgehen" id="tab-vorgehen">Vorgehen</button>
   <button class="nb" data-p="anlagen" role="tab" aria-selected="false" aria-controls="p-anlagen" id="tab-anlagen">Anlagen</button>
   <button class="nb" data-p="recht" role="tab" aria-selected="false" aria-controls="p-recht" id="tab-recht">Ansprüche</button>
 </div></nav>
@@ -170,7 +169,7 @@ strong{color:var(--t)}
   <div class="pill" style="background:var(--rd);color:var(--r);border:1px solid rgba(248,113,113,.18)">⏱ Frist: 27. März 2026</div>
   <h1>Bali Stranding – Legal Command Center</h1>
   <p>Gasperetti & Suryadi vs. Qatar / Gotogate / Booking.com · Emirates (separat)</p>
-  <p style="margin-top:2px">v6.2 · 22.03.2026 · 27 Beweisstücke · LTA korrigiert · WCAG 2.1 AA</p>
+  <p style="margin-top:2px">v6.3 · 22.03.2026 · Unified Vorgehen · 27 Beweisstücke · WCAG 2.1 AA</p>
   <div class="cd" id="cd">
     <div class="cd-i"><div class="cd-n" id="cd-d">5</div><div class="cd-l">Tage</div></div>
     <div class="cd-s">:</div>
@@ -226,54 +225,46 @@ strong{color:var(--t)}
 </div>
 
 <!-- ══════════════════════════════════════ -->
-<!-- PAGE: FAHRPLAN                         -->
+<!-- PAGE: VORGEHEN (unified workflow)      -->
 <!-- ══════════════════════════════════════ -->
-<div class="pg" id="p-fahrplan" role="tabpanel" aria-labelledby="tab-fahrplan">
+<div class="pg" id="p-vorgehen" role="tabpanel" aria-labelledby="tab-vorgehen">
 <div class="prg"><div class="prg-l"><span>Fortschritt</span><span id="pp">0%</span></div><div class="prg-b"><div class="prg-f" id="pf" style="width:0%"></div></div></div>
 
+<!-- ═══ PHASE 1 ═══ -->
 <div class="ph"><span class="badge b-r">Phase 1</span><span class="ph-t">Sofort</span><span class="ph-d">22.–26.3.</span></div>
-<div class="stp dn" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">✅ Belege sichern + Anlagenverzeichnis</div><div class="s-ds">27 Beweisstücke gesichert, nummeriert, Dashboard deployed. Erledigt 22.3.</div></div></div>
-<div class="stp" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">Gotogate-Teilerstattung beantragen</div><div class="s-ds">Link in Stornierungsmail vom 13.3. → Rückflug-Anteil ~826,92 EUR. Schließt weitergehende Forderungen NICHT aus.</div><div class="s-meta"><span class="tag" style="background:var(--amd);color:var(--am)">Gotogate</span><span class="tag" style="background:var(--rd);color:var(--r)">Sofort</span></div></div></div>
-<div class="stp" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">Emirates-Forderungsschreiben senden</div><div class="s-ds">MÜ Art. 19 · ~766 EUR Verspätungsschaden. Musterschreiben fertig im Tab „Schreiben". Per E-Mail an customer.affairs@emirates.com + Einschreiben.</div><div class="s-meta"><span class="tag" style="background:var(--pd);color:var(--p)">Emirates</span><span class="tag" style="background:var(--rd);color:var(--r)">Bis 25.3.</span></div></div></div>
-<div class="stp" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">AmEx Chargeback vorbereiten</div><div class="s-ds">+49 69 97 97 1000 oder online. „Service not rendered" für Qatar (1.653,84 EUR). Frist: 120 Tage ab Flugdatum 15.3. = ~13. Juli 2026.</div><div class="s-meta"><span class="tag" style="background:var(--gd);color:var(--g)">AmEx</span><span class="tag" style="background:var(--rd);color:var(--r)">Bis 26.3.</span></div></div></div>
-<div class="stp dn" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">✅ LTA-Formblatt geprüft — UNSICHER</div><div class="s-ds">Flug 19.01. + Hotel Abisena 25.01. = 6 Tage Abstand + versch. E-Mails. 24h-Regel § 651w greift nicht. Kein Formblatt in Bestätigung, aber zeitlicher Abstand schwächt LTA-Argument. Nur mit Anwalt verfolgbar.</div><div class="s-meta"><span class="tag" style="background:var(--rd);color:var(--r)">Geprüft</span><span class="tag" style="background:var(--s3);color:var(--t2)">Unsicher</span></div></div></div>
 
-<div class="ph"><span class="badge b-a">Phase 2</span><span class="ph-t">Nach Fristablauf</span><span class="ph-d">27.3.–10.4.</span></div>
-<div class="stp" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">2. Mahnung Gotogate/Booking.com</div><div class="s-ds">Frist abgelaufen → Verzug. Bezifferte Forderung + LTA-Argument + 7 Tage Nachfrist. Musterschreiben im Tab „Schreiben".</div><div class="s-meta"><span class="tag" style="background:var(--amd);color:var(--am)">27.3.</span></div></div></div>
-<div class="stp" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">Bezifferte Forderung an Qatar Airways</div><div class="s-ds">Erstattung + Differenz + Betreuung + EU-261 Ausgleich. Per E-Mail + Einschreiben an QR Frankfurt. Musterschreiben fertig.</div><div class="s-meta"><span class="tag" style="background:var(--ad);color:var(--a)">Bis 28.3.</span></div></div></div>
-<div class="stp" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">Erstberatung Reiserechts-Anwalt</div><div class="s-ds">Für LTA-Hebel (§ 651w) braucht ihr einen Anwalt. Viele bieten kostenlose Erstberatung. anwalt.de → Reiserecht → München.</div><div class="s-meta"><span class="tag" style="background:var(--bld);color:var(--bl)">Bis 4.4.</span></div></div></div>
-<div class="stp" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">AmEx Chargeback formal einleiten</div><div class="s-ds">Falls bis 4.4. keine Erstattung: Chargeback beantragen. Läuft parallel zu rechtlichen Schritten.</div><div class="s-meta"><span class="tag" style="background:var(--bld);color:var(--bl)">Ab 4.4.</span></div></div></div>
+<!-- STEP 0: Belege (done) -->
+<div class="stp dn" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">✅ Belege sichern + Anlagenverzeichnis</div><div class="s-ds">27 Beweisstücke gesichert, nummeriert. Erledigt 22.3.</div></div></div>
 
-<div class="ph"><span class="badge b-b">Phase 3</span><span class="ph-t">Behörden + Schlichtung</span><span class="ph-d">April–Mai</span></div>
-<div class="stp" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">LBA-Beschwerde gegen Qatar Airways</div><div class="s-ds">lba.de → Fluggastrechte. Kostenlos. EU-261 Annullierung + Re-Routing-Verweigerung.</div></div></div>
-<div class="stp" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">EVZ + KKV (Finnland) + ACM (Niederlande)</div><div class="s-ds">Grenzüberschreitende Verbraucherbeschwerde. evz.de (kostenlos). KKV gegen Gotogate (FI). ACM gegen Booking.com (NL).</div></div></div>
-<div class="stp" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">SRV-Schlichtung (kostenlos)</div><div class="s-ds">schlichtung-reise-und-verkehr.de · Gute Erfolgsquote. Mai 2026.</div></div></div>
+<!-- STEP 0b: LTA (done) -->
+<div class="stp dn" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">✅ LTA § 651w geprüft — UNSICHER</div><div class="s-ds">Flug 19.01. + Hotel 25.01. = 6 Tage + versch. E-Mails → 24h-Regel greift nicht. Nur mit Anwalt.</div></div></div>
 
-<div class="ph"><span class="badge" style="background:var(--s3);color:var(--t2)">Phase 4</span><span class="ph-t">Ultima Ratio</span><span class="ph-d">Ab Juli '26</span></div>
-<div class="stp" onclick="tgl(this)"><div class="s-ck">✓</div><div class="s-tx"><div class="s-tt">Klage AG München</div><div class="s-ds">Streitwert < 5.000€: kein Anwaltszwang. Klagefrist MÜ: 17.3.2028. BGB: 31.12.2029.</div></div></div>
-
-<div class="c" style="margin-top:14px">
-  <div class="c-t"><div class="ico" style="background:var(--rd)">📅</div> Fristen</div>
-  <table><thead><tr><th>Datum</th><th>Aktion</th><th>Prio</th></tr></thead><tbody>
-    <tr><td style="font-weight:600;white-space:nowrap">27.3.</td><td>Gotogate-Frist → 2. Mahnung</td><td><span class="badge b-r">kritisch</span></td></tr>
-    <tr><td style="font-weight:600;white-space:nowrap">28.3.</td><td>Forderung Qatar Airways</td><td><span class="badge b-r">kritisch</span></td></tr>
-    <tr><td style="font-weight:600;white-space:nowrap">4.4.</td><td>Behörden + Chargeback</td><td><span class="badge b-a">hoch</span></td></tr>
-    <tr><td style="font-weight:600;white-space:nowrap">~13.7.</td><td>AmEx Chargeback-Frist</td><td><span class="badge b-r">deadline</span></td></tr>
-    <tr><td style="font-weight:600;white-space:nowrap">17.3.28</td><td>Klagefrist MÜ (Emirates)</td><td><span class="badge b-b">lang</span></td></tr>
-  </tbody></table>
+<!-- STEP 1: Gotogate Teilerstattung -->
+<details class="ac" id="step1">
+<summary><span class="badge b-r" style="margin-right:4px">1</span> <strong>Gotogate-Teilerstattung beantragen</strong> <span class="ac-d" style="color:var(--r)">Sofort</span></summary>
+<div class="ac-b">
+<strong>Was tun:</strong> Link in der Stornierungsmail vom 13.3. klicken → Rückflug-Anteil ~826,92 EUR beantragen. Das schließt weitergehende Forderungen NICHT aus.<br><br>
+<strong>An:</strong> Gotogate (über Link in E-Mail vom 13.3.)<br>
+<strong>Betrag:</strong> ~826,92 EUR (50% von 1.653,84 EUR)<br>
+<strong>Rechtsgrundlage:</strong> Art. 8 Abs. 1(a) EU-VO 261/2004<br><br>
+<strong>Kein Musterschreiben nötig</strong> — einfach den Erstattungslink in der Mail anklicken.<br><br>
+<strong style="color:var(--a)">📎 Relevante Anlagen bei Rückfragen:</strong><br>
+Anl. 22 (Buchungsbestätigung), Anl. 26 (Gotogate Stornierung), Anl. 02 (AmEx Qatar)
 </div>
-</div>
+</details>
 
-<!-- ══════════════════════════════════════ -->
-<!-- PAGE: SCHREIBEN (WORKFLOW)             -->
-<!-- ══════════════════════════════════════ -->
-<div class="pg" id="p-workflow" role="tabpanel" aria-labelledby="tab-workflow">
-<div class="c"><div class="c-t"><div class="ico" style="background:var(--gd)">✉️</div> Vorgefertigte Schreiben</div><p style="font-size:11px;color:var(--t3)">Klick zum Öffnen → Text kopieren → anpassen → senden. Anlagen-Nummern verweisen auf Tab „Anlagen".</p></div>
-
-<!-- SCHREIBEN 1: Emirates -->
+<!-- STEP 2: Emirates Forderung -->
+<details class="ac" id="step2">
+<summary><span class="badge b-p" style="margin-right:4px">2</span> <strong>Emirates-Forderung senden</strong> <span class="ac-d" style="color:var(--r)">Bis 25.3.</span></summary>
+<div class="ac-b">
+<strong>Was tun:</strong> E-Mail + Einschreiben senden. ~766 EUR Verspätungsschaden (MÜ Art. 19).<br><br>
+<strong>An:</strong> customer.affairs@emirates.com<br>
+<strong>Betrag:</strong> ~766,54 EUR<br>
+<strong>Rechtsgrundlage:</strong> Montrealer Übereinkommen Art. 19 (NICHT EU-VO!)<br>
+<strong>Frist setzen:</strong> 14 Tage<br><br>
 <div class="brief">
-  <div class="brief-h"><div><div class="brief-t">1. Emirates-Forderung (MÜ Art. 19)</div><div class="brief-sub">~766 EUR · Per E-Mail + Einschreiben · Sofort</div></div></div>
-  <div class="brief-body">An: customer.affairs@emirates.com
+<div class="brief-h"><div><div class="brief-t">✉️ Musterschreiben Emirates</div><div class="brief-sub">Kopieren → anpassen → senden</div></div></div>
+<div class="brief-body">An: customer.affairs@emirates.com
 Betreff: Schadensersatzforderung wegen Flugverspätung – Buchung EM8Q2B / EK369 DPS→DXB, 16.03.2026
 
 Sehr geehrte Damen und Herren,
@@ -301,23 +292,48 @@ Durch die Verspätung sind uns folgende nachweisbare Mehrkosten entstanden:
 
 Gesamtforderung: ~766,54 EUR
 
-ANLAGEN:
-- Emirates E-Tickets (Anlagen 19 + 20)
-- Emirates Tarifbedingungen (Anlage 21)
-- Hotelrechnung Waldorf Astoria Dubai (Anlage 15)
-- AmEx-Kontoauszüge (Anlagen 09-11, 17-18)
-
 FRIST:
 Wir bitten um Erstattung des Schadensbetrags innerhalb von 14 Kalendertagen auf das bei der Buchung verwendete Zahlungsmittel (American Express).
 
 Mit freundlichen Grüßen
 Laura Gasperetti & Darius Suryadi</div>
 </div>
+<br>
+<strong style="color:var(--a)">📎 Anlagen beilegen:</strong><br>
+Anl. 19 + 20 (Emirates E-Tickets) · Anl. 21 (Tarifbedingungen) · Anl. 15 (Waldorf Rechnung) · Anl. 17-18 (AmEx Abrechnungen) · Anl. 09-11 (AmEx komplett)
+</div>
+</details>
 
-<!-- SCHREIBEN 2: 2. Mahnung Gotogate -->
+<!-- STEP 3: AmEx Chargeback -->
+<details class="ac" id="step3">
+<summary><span class="badge b-g" style="margin-right:4px">3</span> <strong>AmEx Chargeback vorbereiten</strong> <span class="ac-d" style="color:var(--r)">Bis 26.3.</span></summary>
+<div class="ac-b">
+<strong>Was tun:</strong> AmEx anrufen oder online einleiten. „Service not rendered" für Qatar-Flug.<br><br>
+<strong>Telefon:</strong> +49 69 97 97 1000<br>
+<strong>Betrag:</strong> 1.653,84 EUR (Qatar Original)<br>
+<strong>Grund:</strong> „Service not rendered" — Rückflüge annulliert, keine Ersatzbeförderung<br>
+<strong>Frist:</strong> 120 Tage ab Flugdatum 15.3. = <strong>~13. Juli 2026</strong><br><br>
+<strong>Kein Musterschreiben nötig</strong> — AmEx hat eigenes Formular.<br><br>
+<strong style="color:var(--a)">📎 Bereithalten:</strong><br>
+Anl. 02 (AmEx Qatar) · Anl. 22 (Buchung) · Anl. 26 (Stornierung) · Anl. 24 (Chat-Transkript)
+</div>
+</details>
+
+<!-- ═══ PHASE 2 ═══ -->
+<div class="ph"><span class="badge b-a">Phase 2</span><span class="ph-t">Nach Fristablauf</span><span class="ph-d">27.3.–10.4.</span></div>
+
+<!-- STEP 4: 2. Mahnung Gotogate -->
+<details class="ac" id="step4">
+<summary><span class="badge b-a" style="margin-right:4px">4</span> <strong>2. Mahnung Gotogate/Booking.com</strong> <span class="ac-d" style="color:var(--r)">Am 27.3.</span></summary>
+<div class="ac-b">
+<strong>Was tun:</strong> Frist abgelaufen → Verzug. Bezifferte Forderung 3.903,29 EUR + 7 Tage Nachfrist.<br><br>
+<strong>An:</strong> schedulechange@flightsonbooking.gotogate.support<br>
+<strong>CC:</strong> customer.service@booking.com, ds@beryl-holding.de, gasperetti.laura@gmail.com<br>
+<strong>Betrag:</strong> 3.903,29 EUR<br>
+<strong>Nachfrist:</strong> 7 Tage (bis 03.04.2026)<br><br>
 <div class="brief">
-  <div class="brief-h"><div><div class="brief-t">2. Zweite Mahnung Gotogate/Booking.com</div><div class="brief-sub">Bezifferte Forderung + LTA · Am 27.3. senden</div></div></div>
-  <div class="brief-body">An: schedulechange@flightsonbooking.gotogate.support
+<div class="brief-h"><div><div class="brief-t">✉️ Musterschreiben 2. Mahnung</div><div class="brief-sub">Kopieren → anpassen → am 27.3. senden</div></div></div>
+<div class="brief-body">An: schedulechange@flightsonbooking.gotogate.support
 CC: customer.service@booking.com, ds@beryl-holding.de, gasperetti.laura@gmail.com
 Betreff: 2. MAHNUNG – Fristablauf 27.03.2026 – Bezifferte Schadensersatzforderung | Ref. 40-869611431 | PNR YO9OOR
 
@@ -357,16 +373,26 @@ b) Beschwerde beim LBA, EVZ, KKV (Finnland), ACM (Niederlande)
 c) Rechtsanwaltliche Vertretung beauftragen
 d) Gerichtliche Schritte einleiten
 
-Anlagen: Vollständiges Anlagenverzeichnis mit 27 Beweisstücken (auf Anfrage)
-
 Mit freundlichen Grüßen
 Laura Gasperetti & Darius Suryadi</div>
 </div>
+<br>
+<strong style="color:var(--a)">📎 Anlagen beilegen:</strong><br>
+Anl. 01-08 (AmEx + Chat) · Anl. 14-16 (Rechnungen) · Anl. 22-26 (Buchung + Stornierung + Chat) · Anl. 27 (FlightAware)
+</div>
+</details>
 
-<!-- SCHREIBEN 3: Qatar Airways -->
+<!-- STEP 5: Qatar Airways -->
+<details class="ac" id="step5">
+<summary><span class="badge b-a" style="margin-right:4px">5</span> <strong>Bezifferte Forderung Qatar Airways</strong> <span class="ac-d" style="color:var(--r)">Bis 28.3.</span></summary>
+<div class="ac-b">
+<strong>Was tun:</strong> E-Mail + Einschreiben an Qatar Airways Frankfurt. 5.103,29 EUR inkl. EU-261 Ausgleich.<br><br>
+<strong>An:</strong> tell-us@qatarairways.com.qa<br>
+<strong>Betrag:</strong> 5.103,29 EUR + Verzugszinsen<br>
+<strong>Frist setzen:</strong> 14 Tage<br><br>
 <div class="brief">
-  <div class="brief-h"><div><div class="brief-t">3. Bezifferte Forderung Qatar Airways</div><div class="brief-sub">Erstattung + Ausgleich + Betreuung · Bis 28.3.</div></div></div>
-  <div class="brief-body">An: tell-us@qatarairways.com.qa
+<div class="brief-h"><div><div class="brief-t">✉️ Musterschreiben Qatar Airways</div><div class="brief-sub">Kopieren → anpassen → bis 28.3. senden</div></div></div>
+<div class="brief-body">An: tell-us@qatarairways.com.qa
 Betreff: Bezifferte Schadensersatzforderung | Case CAS-735359-C7H8M9 | PNR YO9OOR | 2 Passagiere
 
 Sehr geehrte Damen und Herren,
@@ -404,24 +430,95 @@ FRIST: 14 Kalendertage ab Zugang dieses Schreibens.
 
 Bei fruchtlosem Fristablauf: LBA-Beschwerde, SRV-Schlichtung, gerichtliche Schritte.
 
-Anlagen: 27 Beweisstücke (auf Anfrage, Anlagenverzeichnis beigefügt)
-
 Mit freundlichen Grüßen
 Laura Gasperetti & Darius Suryadi</div>
 </div>
+<br>
+<strong style="color:var(--a)">📎 Anlagen beilegen:</strong><br>
+Anl. 02-03 (AmEx Qatar + Emirates) · Anl. 12-13 (Boarding) · Anl. 22-24 (Buchung + Chat) · Anl. 25-27 (Stornierung + FlightAware)
+</div>
+</details>
 
-<!-- ANLAGEN-CHECKLISTE FÜR SCHREIBEN -->
-<div class="c">
-  <div class="c-t"><div class="ico" style="background:var(--ad)">📎</div> Welche Anlagen zu welchem Schreiben?</div>
-  <div class="al al-i" style="margin-top:0">
-    <strong>Emirates-Forderung:</strong> Anl. 15 (Waldorf), 17-18 (AmEx), 19-21 (Emirates Tickets + Tarif), 09-11 (AmEx komplett)
-  </div>
-  <div class="al al-a">
-    <strong>2. Mahnung Gotogate:</strong> Anl. 01-08 (AmEx + Chat), 14-16 (Rechnungen), 22-26 (Buchung + Stornierung + Chat-Transkript), 27 (FlightAware)
-  </div>
-  <div class="al al-r">
-    <strong>Forderung Qatar:</strong> Anl. 02-03 (AmEx Qatar + Emirates), 12-13 (Boarding), 22-24 (Buchung + Chat), 25-27 (Stornierung + FlightAware)
-  </div>
+<!-- STEP 6: Anwalt -->
+<details class="ac" id="step6">
+<summary><span class="badge b-b" style="margin-right:4px">6</span> <strong>Erstberatung Reiserechts-Anwalt</strong> <span class="ac-d">Bis 4.4.</span></summary>
+<div class="ac-b">
+<strong>Was tun:</strong> Kostenlose Erstberatung für Vermittlerhaftung + LTA-Frage.<br><br>
+<strong>Wo finden:</strong> anwalt.de → Reiserecht → München<br>
+<strong>Warum:</strong> Vermittlerpflichtverletzung (§ 280 BGB) ist stark belegt, LTA (§ 651w) braucht Anwalt-Bewertung<br>
+<strong>Kosten:</strong> Erstberatung meist kostenlos oder ~50-150 EUR<br><br>
+<strong>Kein Musterschreiben nötig</strong> — persönliches Gespräch/Telefonat.<br><br>
+<strong style="color:var(--a)">📎 Mitnehmen:</strong><br>
+Dashboard-Link + alle 27 Anlagen (digital), Anl. 24 (Chat-Transkript = Kernbeweis)
+</div>
+</details>
+
+<!-- STEP 7: AmEx Chargeback einleiten -->
+<details class="ac" id="step7">
+<summary><span class="badge b-b" style="margin-right:4px">7</span> <strong>AmEx Chargeback formal einleiten</strong> <span class="ac-d">Ab 4.4.</span></summary>
+<div class="ac-b">
+<strong>Was tun:</strong> Falls bis 4.4. keine Erstattung → Chargeback beantragen. Läuft parallel.<br><br>
+<strong>Telefon:</strong> +49 69 97 97 1000<br>
+<strong>Betrag:</strong> 1.653,84 EUR<br>
+<strong>Deadline:</strong> ~13. Juli 2026 (120 Tage ab 15.3.)<br><br>
+<strong style="color:var(--a)">📎 Bereithalten:</strong><br>
+Anl. 02, 22, 24, 26 (Buchung + Chat + Stornierung)
+</div>
+</details>
+
+<!-- ═══ PHASE 3 ═══ -->
+<div class="ph"><span class="badge b-b">Phase 3</span><span class="ph-t">Behörden + Schlichtung</span><span class="ph-d">April–Mai</span></div>
+
+<details class="ac" id="step8">
+<summary><span class="badge" style="background:var(--s3);color:var(--t2);margin-right:4px">8</span> <strong>LBA-Beschwerde gegen Qatar Airways</strong> <span class="ac-d">April</span></summary>
+<div class="ac-b">
+<strong>Was tun:</strong> lba.de → Fluggastrechte → Online-Formular. Kostenlos.<br>
+<strong>Grund:</strong> EU-261 Annullierung + Re-Routing-Verweigerung<br><br>
+<strong style="color:var(--a)">📎 Hochladen:</strong> Anl. 22 (Buchung), 24 (Chat), 27 (FlightAware)
+</div>
+</details>
+
+<details class="ac" id="step9">
+<summary><span class="badge" style="background:var(--s3);color:var(--t2);margin-right:4px">9</span> <strong>EVZ + KKV (FI) + ACM (NL)</strong> <span class="ac-d">April</span></summary>
+<div class="ac-b">
+<strong>Was tun:</strong> Grenzüberschreitende Verbraucherbeschwerden einreichen.<br>
+<strong>EVZ:</strong> evz.de (kostenlos) — gegen Gotogate + Booking.com<br>
+<strong>KKV:</strong> kkv.fi — finnische Verbraucherbehörde gegen Gotogate (Sitz: Helsinki)<br>
+<strong>ACM:</strong> acm.nl — niederländische Behörde gegen Booking.com (Sitz: Amsterdam)
+</div>
+</details>
+
+<details class="ac" id="step10">
+<summary><span class="badge" style="background:var(--s3);color:var(--t2);margin-right:4px">10</span> <strong>SRV-Schlichtung (kostenlos)</strong> <span class="ac-d">Mai</span></summary>
+<div class="ac-b">
+<strong>Was tun:</strong> schlichtung-reise-und-verkehr.de → Antrag online einreichen.<br>
+<strong>Kosten:</strong> Kostenlos · Gute Erfolgsquote<br>
+<strong>Dauer:</strong> Ca. 90 Tage
+</div>
+</details>
+
+<!-- ═══ PHASE 4 ═══ -->
+<div class="ph"><span class="badge" style="background:var(--s3);color:var(--t2)">Phase 4</span><span class="ph-t">Ultima Ratio</span><span class="ph-d">Ab Juli '26</span></div>
+
+<details class="ac" id="step11">
+<summary><span class="badge" style="background:var(--s3);color:var(--t2);margin-right:4px">11</span> <strong>Klage AG München</strong> <span class="ac-d">Ab Juli</span></summary>
+<div class="ac-b">
+<strong>Streitwert:</strong> < 5.000€ → kein Anwaltszwang<br>
+<strong>Fristen:</strong> MÜ Klagefrist: 17.3.2028 · BGB Verjährung: 31.12.2029
+</div>
+</details>
+
+<!-- FRISTEN -->
+<div class="c" style="margin-top:14px">
+  <div class="c-t"><div class="ico" style="background:var(--rd)">📅</div> Alle Fristen</div>
+  <table><thead><tr><th>Datum</th><th>Aktion</th><th>Prio</th></tr></thead><tbody>
+    <tr><td style="font-weight:600;white-space:nowrap">27.3.</td><td>Gotogate-Frist → 2. Mahnung senden</td><td><span class="badge b-r">kritisch</span></td></tr>
+    <tr><td style="font-weight:600;white-space:nowrap">28.3.</td><td>Forderung Qatar Airways senden</td><td><span class="badge b-r">kritisch</span></td></tr>
+    <tr><td style="font-weight:600;white-space:nowrap">3.4.</td><td>Gotogate-Nachfrist läuft ab</td><td><span class="badge b-a">hoch</span></td></tr>
+    <tr><td style="font-weight:600;white-space:nowrap">4.4.</td><td>AmEx Chargeback + Behörden</td><td><span class="badge b-a">hoch</span></td></tr>
+    <tr><td style="font-weight:600;white-space:nowrap">~13.7.</td><td>AmEx Chargeback-Frist</td><td><span class="badge b-r">deadline</span></td></tr>
+    <tr><td style="font-weight:600;white-space:nowrap">17.3.28</td><td>Klagefrist MÜ (Emirates)</td><td><span class="badge b-b">lang</span></td></tr>
+  </tbody></table>
 </div>
 </div>
 
@@ -501,7 +598,7 @@ Laura Gasperetti & Darius Suryadi</div>
 
 <div class="ft">
   <strong>Hinweis:</strong> Keine Rechtsberatung i.S.d. RDG. Anwaltliche Prüfung empfohlen.<br>
-  v6.2 · 22.03.2026 · LTA korrigiert · WCAG 2.1 AA · Gasperetti & Suryadi
+  v6.3 · 22.03.2026 · Unified Vorgehen · LTA korrigiert · WCAG 2.1 AA · Gasperetti & Suryadi
 </div>
 </div><!-- /wrap -->
 
@@ -539,16 +636,50 @@ function uc(){
 }
 uc();setInterval(uc,60000);
 
-// FAHRPLAN
+// VORGEHEN — Progress + Toggle
 function tgl(e){e.classList.toggle('dn');up();sv()}
 function up(){
-  const s=document.querySelectorAll('.stp'),d=document.querySelectorAll('.stp.dn');
-  const p=Math.round(d.length/s.length*100);
+  const vg=document.getElementById('p-vorgehen');
+  if(!vg)return;
+  const stps=vg.querySelectorAll('.stp');
+  const acs=vg.querySelectorAll('details.ac');
+  const total=stps.length+acs.length;
+  const done=vg.querySelectorAll('.stp.dn').length+vg.querySelectorAll('details.ac.done').length;
+  const p=total?Math.round(done/total*100):0;
   document.getElementById('pp').textContent=p+'%';
   document.getElementById('pf').style.width=p+'%';
 }
-function sv(){const s=[];document.querySelectorAll('.stp').forEach((e,i)=>s.push(e.classList.contains('dn')?1:0));try{localStorage.setItem('fp6',JSON.stringify(s))}catch(e){}}
-function ld(){try{const s=JSON.parse(localStorage.getItem('fp6'));if(s)document.querySelectorAll('.stp').forEach((e,i)=>{if(s[i])e.classList.add('dn')})}catch(e){}up()}
+function sv(){
+  const state={stps:[],acs:[]};
+  document.querySelectorAll('#p-vorgehen .stp').forEach(e=>state.stps.push(e.classList.contains('dn')?1:0));
+  document.querySelectorAll('#p-vorgehen details.ac').forEach(e=>state.acs.push(e.classList.contains('done')?1:0));
+  try{localStorage.setItem('vg6',JSON.stringify(state))}catch(e){}
+}
+function ld(){
+  try{
+    const state=JSON.parse(localStorage.getItem('vg6'));
+    if(state){
+      if(state.stps)document.querySelectorAll('#p-vorgehen .stp').forEach((e,i)=>{if(state.stps[i])e.classList.add('dn')});
+      if(state.acs)document.querySelectorAll('#p-vorgehen details.ac').forEach((e,i)=>{if(state.acs[i])e.classList.add('done')});
+    }
+  }catch(e){}
+  up();
+}
+// Mark accordion step done
+document.querySelectorAll('#p-vorgehen details.ac summary').forEach(s=>{
+  const btn=document.createElement('button');
+  btn.className='tag';btn.style.cssText='margin-left:auto;background:var(--gd);color:var(--g);border:1px solid rgba(52,211,153,.2);cursor:pointer;font-family:inherit;min-height:28px';
+  btn.textContent='✓ Erledigt';
+  btn.addEventListener('click',ev=>{
+    ev.preventDefault();ev.stopPropagation();
+    const ac=s.closest('details.ac');
+    ac.classList.toggle('done');
+    if(ac.classList.contains('done')){ac.removeAttribute('open');ac.style.opacity='.45';btn.textContent='↩ Zurück'}
+    else{ac.style.opacity='1';btn.textContent='✓ Erledigt'}
+    up();sv();
+  });
+  s.appendChild(btn);
+});
 ld();
 
 // KEYBOARD: Steps + Briefs
