@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Claim Dashboard – Bali Stranding 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  :root {
+    --bg: #06060b;
+    --surface: rgba(255,255,255,0.03);
+    --surface-2: rgba(255,255,255,0.06);
+    --surface-3: rgba(255,255,255,0.09);
+    --border: rgba(255,255,255,0.07);
+    --border-hover: rgba(255,255,255,0.14);
+    --text: #eeeef4;
+    --text-2: #b0b0c8;
+    --text-3: #70708a;
+    --accent: #818cf8;
+    --accent-dim: rgba(129,140,248,0.12);
+    --red: #f87171;
+    --red-dim: rgba(248,113,113,0.1);
+    --amber: #fbbf24;
+    --amber-dim: rgba(251,191,36,0.1);
+    --green: #34d399;
+    --green-dim: rgba(52,211,153,0.1);
+    --blue: #60a5fa;
+    --blue-dim: rgba(96,165,250,0.1);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-xs: 6px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+  .wrap { max-width:880px; margin:0 auto; padding:32px 20px 60px; }
+
+  /* HERO */
+  .hero {
+    text-align:center;
+    padding:44px 28px 40px;
+    background:linear-gradient(160deg, rgba(129,140,248,0.06) 0%, rgba(248,113,113,0.04) 100%);
+    border:1px solid var(--border);
+    border-radius:28px;
+    margin-bottom:28px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before {
+    content:'';position:absolute;top:-60%;left:-20%;width:140%;height:140%;
+    background:radial-gradient(ellipse at 50% 0%, rgba(129,140,248,0.08) 0%, transparent 60%);
+    pointer-events:none;
+  }
+  .pill {
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:11px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase;
+    padding:5px 14px; border-radius:100px; margin-bottom:14px;
+  }
+  .pill-red { background:var(--red-dim); color:var(--red); border:1px solid rgba(248,113,113,0.18); }
+  .pill-green { background:var(--green-dim); color:var(--green); border:1px solid rgba(52,211,153,0.18); }
+  .pill-amber { background:var(--amber-dim); color:var(--amber); border:1px solid rgba(251,191,36,0.18); }
+  .pill-blue { background:var(--blue-dim); color:var(--blue); border:1px solid rgba(96,165,250,0.18); }
+  .hero h1 { font-size:26px; font-weight:700; letter-spacing:-0.4px; margin-bottom:6px; position:relative; }
+  .hero-sub { color:var(--text-3); font-size:13px; position:relative; }
+
+  /* KPI ROW */
+  .kpi-row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:28px; }
+  @media(max-width:600px){ .kpi-row{grid-template-columns:1fr;} }
+  .kpi {
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px 22px;text-align:center;position:relative;overflow:hidden;
+  }
+  .kpi::before {
+    content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  }
+  .kpi.kpi-red::before { background:linear-gradient(90deg,var(--red),transparent); }
+  .kpi.kpi-green::before { background:linear-gradient(90deg,var(--green),transparent); }
+  .kpi.kpi-amber::before { background:linear-gradient(90deg,var(--amber),transparent); }
+  .kpi-label { font-size:11px; text-transform:uppercase; letter-spacing:0.8px; color:var(--text-3); margin-bottom:6px; }
+  .kpi-value { font-size:28px; font-weight:800; letter-spacing:-1px; }
+  .kpi-value.red { color:var(--red); }
+  .kpi-value.green { color:var(--green); }
+  .kpi-value.amber { color:var(--amber); }
+  .kpi-note { font-size:11px; color:var(--text-3); margin-top:4px; }
+
+  /* SECTIONS */
+  .card {
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:28px; margin-bottom:20px;
+  }
+  .card-title {
+    font-size:16px; font-weight:600; margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .card-title .ico {
+    width:30px;height:30px;border-radius:var(--radius-xs);display:flex;align-items:center;justify-content:center;
+    font-size:14px;flex-shrink:0;
+  }
+  .ico-p { background:var(--accent-dim); }
+  .ico-r { background:var(--red-dim); }
+  .ico-a { background:var(--amber-dim); }
+  .ico-g { background:var(--green-dim); }
+  .ico-b { background:var(--blue-dim); }
+
+  /* ACCORDION */
+  .accordion { border:1px solid var(--border); border-radius:var(--radius-sm); overflow:hidden; margin-bottom:4px; }
+  .accordion summary {
+    display:flex; align-items:center; gap:12px;
+    padding:14px 18px; cursor:pointer; font-size:13px; font-weight:500;
+    background:var(--surface-2); list-style:none; user-select:none;
+    transition:background .15s;
+  }
+  .accordion summary:hover { background:var(--surface-3); }
+  .accordion summary::-webkit-details-marker { display:none; }
+  .accordion summary::before {
+    content:'›'; font-size:16px; color:var(--text-3); transition:transform .2s; flex-shrink:0; width:14px; text-align:center;
+  }
+  .accordion[open] summary::before { transform:rotate(90deg); }
+  .accordion .acc-body { padding:14px 18px 16px; font-size:13px; color:var(--text-2); line-height:1.7; border-top:1px solid var(--border); }
+  .acc-date { font-size:11px; color:var(--text-3); font-weight:600; flex-shrink:0; min-width:90px; }
+  .acc-title { flex:1; }
+  .acc-badge { flex-shrink:0; }
+
+  /* CLAIM TABLE */
+  .claim-row {
+    background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm);
+    padding:18px 20px; margin-bottom:10px;
+    display:grid; grid-template-columns:1fr auto; gap:12px; align-items:start;
+  }
+  .claim-name { font-weight:600; font-size:14px; margin-bottom:3px; }
+  .claim-basis { font-size:12px; color:var(--text-3); line-height:1.6; }
+  .claim-amount { font-size:20px; font-weight:800; text-align:right; white-space:nowrap; }
+
+  /* WORKFLOW STEPS */
+  .step {
+    display:flex; gap:14px; align-items:flex-start;
+    background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm);
+    padding:16px 18px; margin-bottom:8px;
+  }
+  .step-num {
+    width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;flex-shrink:0;
+  }
+  .step-num.urgent { background:var(--red-dim); color:var(--red); border:1px solid rgba(248,113,113,0.2); }
+  .step-num.normal { background:var(--accent-dim); color:var(--accent); border:1px solid rgba(129,140,248,0.2); }
+  .step-title { font-weight:600; font-size:13px; }
+  .step-when { font-size:11px; color:var(--amber); font-weight:500; margin:2px 0 4px; }
+  .step-desc { font-size:12px; color:var(--text-2); line-height:1.6; }
+
+  /* ALERT BOXES */
+  .alert { border-radius:var(--radius-sm); padding:14px 18px; font-size:13px; line-height:1.6; margin:14px 0; }
+  .alert-red { background:var(--red-dim); border:1px solid rgba(248,113,113,0.2); color:var(--red); }
+  .alert-green { background:var(--green-dim); border:1px solid rgba(52,211,153,0.2); color:var(--green); }
+  .alert-amber { background:var(--amber-dim); border:1px solid rgba(251,191,36,0.2); color:var(--amber); }
+
+  /* TOTALS */
+  .total-bar {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:20px 24px; border-radius:var(--radius);
+    background:linear-gradient(135deg, rgba(129,140,248,0.1), rgba(52,211,153,0.06));
+    border:1px solid rgba(129,140,248,0.18);
+    margin-top:14px;
+  }
+  .total-label { font-weight:600; font-size:15px; }
+  .total-val { font-size:26px; font-weight:800; color:var(--green); }
+
+  /* EVIDENCE */
+  .ev { display:flex; align-items:flex-start; gap:10px; padding:10px 14px; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-xs); margin-bottom:6px; font-size:12px; color:var(--text-2); }
+  .ev::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; margin-top:1px; }
+
+  /* DEADLINE TABLE */
+  table { width:100%; border-collapse:separate; border-spacing:0; font-size:13px; }
+  th { text-align:left; padding:10px 14px; background:var(--surface-2); color:var(--text-3); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:0.6px; border-bottom:1px solid var(--border); }
+  th:first-child { border-radius:var(--radius-xs) 0 0 0; }
+  th:last-child { border-radius:0 var(--radius-xs) 0 0; }
+  td { padding:11px 14px; border-bottom:1px solid var(--border); vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+
+  .badge {
+    display:inline-block; font-size:10px; font-weight:600; padding:2px 8px; border-radius:100px; letter-spacing:0.3px;
+  }
+  .badge-r { background:var(--red-dim); color:var(--red); }
+  .badge-a { background:var(--amber-dim); color:var(--amber); }
+  .badge-g { background:var(--green-dim); color:var(--green); }
+  .badge-b { background:var(--blue-dim); color:var(--blue); }
+
+  .footer { text-align:center; padding:28px 20px; font-size:11px; color:var(--text-3); border-top:1px solid var(--border); margin-top:28px; line-height:1.7; }
+  p { margin-bottom:10px; font-size:13px; }
+  strong { color:var(--text); }
+
+  /* FACT GRID */
+  .facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  @media(max-width:600px){ .facts{grid-template-columns:1fr;} }
+  .fact { background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-xs); padding:12px 14px; }
+  .fact-l { font-size:10px; text-transform:uppercase; letter-spacing:0.8px; color:var(--text-3); margin-bottom:2px; }
+  .fact-v { font-size:14px; font-weight:500; }
+
+  .gegner { display:inline-block; padding:5px 12px; border-radius:100px; font-size:11px; font-weight:600; border:1px solid var(--border); margin:0 4px 6px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="pill pill-red">Frist läuft: 27. März 2026</div>
+  <h1>Bali Stranding – Claim Dashboard</h1>
+  <div class="hero-sub">Laura Gasperetti & Darius Suryadi vs. Qatar Airways / Gotogate / Booking.com</div>
+  <div class="hero-sub" style="margin-top:4px;">Stand: 22. März 2026 · PNR YO9OOR · Ref. 40-869611431</div>
+</div>
+
+<!-- ═══ KPIs ═══ -->
+<div class="kpi-row">
+  <div class="kpi kpi-green">
+    <div class="kpi-label">Maximaler Anspruch</div>
+    <div class="kpi-value green">11.000–16.000+€</div>
+    <div class="kpi-note">mit § 651w LTA-Hebel</div>
+  </div>
+  <div class="kpi kpi-red">
+    <div class="kpi-label">Nächste Frist</div>
+    <div class="kpi-value red">5 Tage</div>
+    <div class="kpi-note">27. März – Gotogate-Frist</div>
+  </div>
+  <div class="kpi kpi-amber">
+    <div class="kpi-label">Tage gestrandet</div>
+    <div class="kpi-value amber">9</div>
+    <div class="kpi-note">8.–16. März 2026</div>
+  </div>
+</div>
+
+<!-- ═══ SACHVERHALT ═══ -->
+<div class="card">
+  <div class="card-title"><div class="ico ico-p">📋</div> Sachverhalt</div>
+  <div class="facts">
+    <div class="fact"><div class="fact-l">Passagiere</div><div class="fact-v">Laura Gasperetti & Darius Suryadi</div></div>
+    <div class="fact"><div class="fact-l">PNR / Kundenref.</div><div class="fact-v">YO9OOR / 40-869611431</div></div>
+    <div class="fact"><div class="fact-l">Originalpreis Retour</div><div class="fact-v">1.568,00 EUR (2 Pax)</div></div>
+    <div class="fact"><div class="fact-l">Buchungskanal</div><div class="fact-v">Booking.com → Gotogate (OY SRG Finland AB)</div></div>
+    <div class="fact"><div class="fact-l">Stranding</div><div class="fact-v">8.–16. März 2026 (8 Tage, Bali)</div></div>
+    <div class="fact"><div class="fact-l">Ersatzflug (selbst gebucht)</div><div class="fact-v">Emirates EK369+EK51 · Ref. EM8Q2B</div></div>
+    <div class="fact"><div class="fact-l">Ursache</div><div class="fact-v">Katarischer Luftraum geschlossen seit 28. Feb.</div></div>
+    <div class="fact"><div class="fact-l">Status Forderungen</div><div class="fact-v" style="color:var(--red);">Keine Antwort von QR oder Gotogate</div></div>
+  </div>
+</div>
+
+<!-- ═══ CHRONOLOGIE (Accordion) ═══ -->
+<div class="card">
+  <div class="card-title"><div class="ico ico-a">⏱</div> Chronologie</div>
+
+  <!-- Erste 4 offen -->
+  <details class="accordion" open>
+    <summary>
+      <span class="acc-date">19. Jan.</span>
+      <span class="acc-title">Buchung bestätigt – Flug + Hotel über Booking.com</span>
+      <span class="badge badge-g">Gebucht</span>
+    </summary>
+    <div class="acc-body">QR58+QR962 (MUC→DOH→DPS, 19. Feb.) und QR963+QR59 (DPS→DOH→MUC, 8. März). Gesamtpreis: 1.568 EUR. Urlaubshotel: <strong>Abisena Wellness & Resort Ubud</strong> ebenfalls über Booking.com gebucht – <strong>dies begründet das LTA-Argument nach § 651w BGB.</strong> Während des Strandings musste separat das <strong>Andaz Bali</strong> gebucht und zweimal verlängert werden (Emirates-Flugverspätungen).</div>
+  </details>
+
+  <details class="accordion" open>
+    <summary>
+      <span class="acc-date">28. Feb.</span>
+      <span class="acc-title">Katarischer Luftraum geschlossen – Qatar stellt Betrieb ein</span>
+      <span class="badge badge-r">Krise</span>
+    </summary>
+    <div class="acc-body">Alle Qatar Airways Flüge via Doha werden ausgesetzt. Der gebuchte Rückflug am 8. März ist direkt betroffen. Andere Airlines (Emirates, Turkish, Thai) fliegen weiterhin regulär ab Bali.</div>
+  </details>
+
+  <details class="accordion" open>
+    <summary>
+      <span class="acc-date">7. März</span>
+      <span class="acc-title">Gotogate-Chat: Irreführung, Verweigerung, falsches Versprechen</span>
+      <span class="badge badge-r">Beweis</span>
+    </summary>
+    <div class="acc-body">
+      <strong>Das Kernbeweisstück des Falls.</strong> Agent Khiem im Live-Chat (07:51–08:44 CET):<br><br>
+      (a) <strong>Versuchte Irreführung:</strong> Khiem empfiehlt aktiv, den Flug selbst zu stornieren → Darius erkennt den Trick und lehnt ab<br>
+      (b) <strong>Re-Routing verweigert:</strong> Darius nennt konkrete Alternativflüge (Thai, Turkish via BKK/IST) → Gotogate lehnt ab: „Airline erlaubt keine Änderung des Flugbetriebs"<br>
+      (c) <strong>Umbuchung auf 15. März:</strong> QR961/QR57, weiterhin via Doha<br>
+      (d) <strong>Falsches Versprechen:</strong> „Falls Flüge ausgesetzt bleiben, prüfen wir Alternativoptionen" – wurde nie eingehalten
+    </div>
+  </details>
+
+  <details class="accordion" open>
+    <summary>
+      <span class="acc-date">13. März</span>
+      <span class="acc-title">2. Annullierung – Gotogate bricht Versprechen, bietet nur Erstattung</span>
+      <span class="badge badge-r">Verstoß</span>
+    </summary>
+    <div class="acc-body">
+      QR961/QR57 am 15. März ebenfalls annulliert. Gotogate bietet ausschließlich „1 Option": Teilerstattung. Keine Alternativflüge, kein Re-Routing – trotz Zusage vom 7. März. Parallel: E-Mail um 02:02 WITA verweist Passagiere an die Fluggesellschaft. <strong>Klarer Verstoß gegen Vermittlerpflichten und das gegebene Versprechen.</strong>
+    </div>
+  </details>
+
+  <!-- Rest zugeklappt -->
+  <details class="accordion">
+    <summary>
+      <span class="acc-date">12. März</span>
+      <span class="acc-title">Darius sendet formale Forderungsschreiben an QR + Gotogate</span>
+      <span class="badge badge-a">Forderung</span>
+    </summary>
+    <div class="acc-body">Zwei professionelle Forderungsschreiben mit Rechtsgrundlagen: (1) An Qatar Airways – Re-Routing-Forderung, Frist 48h. (2) An Gotogate/Booking.com – Erstattung, Schadensersatz, LTA-Prüfung, Frist 14 Tage (27. März). Beide mit 6 Anlagen (Buchung, Umbuchung, Chat-Transkript, Screenshots, Stornierungsmails).</div>
+  </details>
+
+  <details class="accordion">
+    <summary>
+      <span class="acc-date">16./17. März</span>
+      <span class="acc-title">Deckungskauf: Emirates EK369 + EK51 (DPS→DXB→MUC)</span>
+      <span class="badge badge-g">Gelöst</span>
+    </summary>
+    <div class="acc-body">Selbst gebuchter Rückflug über Emirates. Ref. EM8Q2B. EK369 DPS→DXB (16.3., 19:50, A380) + EK51 DXB→MUC (17.3.). Kosten: noch zu beziffern anhand Buchungsbestätigung. Die Kosten über dem Originalticket sind als Schadensersatz geltend zu machen.</div>
+  </details>
+
+  <details class="accordion">
+    <summary>
+      <span class="acc-date">22. März</span>
+      <span class="acc-title">Heute: Keine Antwort von QR oder Gotogate – 5 Tage bis Fristablauf</span>
+      <span class="badge badge-r">Offen</span>
+    </summary>
+    <div class="acc-body">Qatar-48h-Frist am 15. März abgelaufen, keine Reaktion. Gotogate-14-Tage-Frist läuft am 27. März ab. Keine Erstattung eingegangen, keine Kommunikation. Verzug ist eingetreten.</div>
+  </details>
+</div>
+
+<!-- ═══ MAXIMALE ANSPRÜCHE ═══ -->
+<div class="card">
+  <div class="card-title"><div class="ico ico-g">💰</div> Maximale Ansprüche – Aufschlüsselung</div>
+
+  <p style="color:var(--text-2);margin-bottom:16px;">Die Ansprüche laufen parallel gegen verschiedene Gegner und sind <strong>kumulativ</strong> – nicht alternativ. Quellen: EU-VO 261/2004, Montrealer Übereinkommen, §§ 280, 249, 651w BGB.</p>
+
+  <div class="gegner" style="border-color:rgba(129,140,248,0.3);color:var(--accent);">Qatar Airways</div>
+  <div class="gegner" style="border-color:rgba(251,191,36,0.3);color:var(--amber);">Gotogate / Booking.com</div>
+  <div class="gegner" style="border-color:rgba(52,211,153,0.3);color:var(--green);">American Express</div>
+
+  <!-- CLAIM 1 -->
+  <div class="claim-row" style="margin-top:16px;">
+    <div>
+      <div class="claim-name">1. Ausgleichszahlung EU 261/2004</div>
+      <div class="claim-basis">
+        <strong>Art. 7 Abs. 1(c):</strong> 600 EUR pro Passagier bei Flügen > 3.500 km.<br>
+        <strong>Gegen:</strong> Qatar Airways (ausführender Carrier).<br>
+        <strong>Verteidigung QR:</strong> „Außergewöhnliche Umstände" (Art. 5 Abs. 3) wegen Luftraumsperrung.<br>
+        <strong>Euer Gegenargument:</strong> QR hat NICHT „alle zumutbaren Maßnahmen" ergriffen – Emirates flog täglich DPS→DXB→MUC, Re-Routing wurde verweigert. CJEU-Rechtsprechung (Sturgeon, Wallentin-Hermann): Exkulpation nur bei Nachweis aller zumutbaren Maßnahmen. BGH bestätigt Pflicht zur Umbuchung auf andere Carrier.<br>
+        <strong>Einschätzung:</strong> <span class="badge badge-a">Streitig, aber gute Argumente</span>
+      </div>
+    </div>
+    <div class="claim-amount" style="color:var(--amber);">1.200 €</div>
+  </div>
+
+  <!-- CLAIM 2 -->
+  <div class="claim-row">
+    <div>
+      <div class="claim-name">2. Erstattung Rückflug-Anteil</div>
+      <div class="claim-basis">
+        <strong>Art. 8 Abs. 1(a) EU 261:</strong> Volle Erstattung des nicht genutzten Flugabschnitts binnen 7 Tagen.<br>
+        <strong>Gegen:</strong> Qatar Airways + Gotogate (gesamtschuldnerisch).<br>
+        <strong>Berechnung:</strong> 50% von 1.568 EUR = 784 EUR (anteiliger Rückflugpreis).<br>
+        <strong>Einschätzung:</strong> <span class="badge badge-g">Unstreitig – steht euch definitiv zu</span>
+      </div>
+    </div>
+    <div class="claim-amount" style="color:var(--green);">784 €</div>
+  </div>
+
+  <!-- CLAIM 3 -->
+  <div class="claim-row">
+    <div>
+      <div class="claim-name">3. Kosten Ersatzbeförderung (Emirates-Differenz)</div>
+      <div class="claim-basis">
+        <strong>§ 281 Abs. 1 BGB</strong> (Schadensersatz statt Leistung) + <strong>Art. 8 Abs. 1(b) EU 261</strong> (Recht auf anderweitige Beförderung).<br>
+        <strong>Gegen:</strong> Qatar Airways + Gotogate.<br>
+        <strong>BGH-Rechtsprechung:</strong> Airlines müssen auf andere Carrier umbuchen, wenn eigene Flüge ausfallen. Bei Verweigerung: Deckungskauf zulässig, Differenzkosten erstattungsfähig.<br>
+        <strong>Berechnung:</strong> Emirates-Kosten (EM8Q2B) abzüglich 784 EUR Rückflug-Erstattung.<br>
+        <strong>Geschätzt:</strong> DPS→DXB ab IDR 23.807.000 + DXB→MUC ab AED 5.920 (2 Pax) ≈ 2.800–4.000 EUR<br>
+        <strong>Einschätzung:</strong> <span class="badge badge-g">Stark – dokumentierte Verweigerung des Re-Routings</span>
+      </div>
+    </div>
+    <div class="claim-amount" style="color:var(--green);">~2.000–3.200 €</div>
+  </div>
+
+  <!-- CLAIM 4 -->
+  <div class="claim-row">
+    <div>
+      <div class="claim-name">4. Betreuungsleistungen – 8 Tage Stranding</div>
+      <div class="claim-basis">
+        <strong>Art. 9 EU 261/2004:</strong> Airline muss bei Annullierung Verpflegung, Hotel, Transport und Kommunikation stellen. Bei Nichterbringung: Selbstbeschaffung und Erstattung der angemessenen Kosten.<br>
+        <strong>Gegen:</strong> Qatar Airways (primär) + ggf. Gotogate/Booking (bei LTA-Haftung).<br>
+        <strong>Unterkunft: Andaz Bali</strong> – musste separat gebucht und <strong>zweimal verlängert</strong> werden, da Emirates-Flüge zusätzlich verspätet waren.<br>
+        <strong>Schätzung pro Passagier / 8 Tage (Andaz-Kosten noch exakt zu beziffern):</strong><br>
+        Hotel (Andaz Bali): Rechnungen ausstehend – voraussichtlich deutlich über 75 EUR/Nacht<br>
+        Verpflegung: 8 × ~15 EUR = 120 EUR<br>
+        Transport: 8 × ~8 EUR = 64 EUR<br>
+        Kommunikation: ~25 EUR<br>
+        <strong>Einschätzung:</strong> <span class="badge badge-g">Unstreitig – Art. 9 gilt auch bei außergewöhnlichen Umständen</span><br>
+        <strong>Hinweis:</strong> Andaz ist ein 5-Sterne-Hotel (Hyatt-Gruppe) – Kosten werden höher als die bisherige Schätzung. Sobald Rechnungen vorliegen, wird die Gesamtsumme aktualisiert.
+      </div>
+    </div>
+    <div class="claim-amount" style="color:var(--green);">~1.620 €</div>
+  </div>
+
+  <!-- CLAIM 5 -->
+  <div class="claim-row">
+    <div>
+      <div class="claim-name">5. § 651w BGB – Linked Travel Arrangement (LTA-Hebel)</div>
+      <div class="claim-basis">
+        <strong>Der stärkste Hebel im Fall.</strong> Flug + Urlaubshotel (<strong>Abisena Wellness & Resort Ubud</strong>) über Booking.com für dieselbe Reise gebucht = verbundene Reiseleistung nach EU-RL 2015/2302 Art. 3(5) / § 651w BGB. Das Abisena war das ursprüngliche Urlaubsresort. Das <strong>Andaz Bali</strong> wurde separat als Notunterkunft während des Strandings gebucht und zweimal verlängert.<br><br>
+        <strong>Wenn Booking.com das Formblatt (§ 651w Abs. 2 BGB i.V.m. Art. 251 § 2 EGBGB) NICHT bereitgestellt hat:</strong><br>
+        → § 651w Abs. 4 BGB greift: <strong>Volle Pauschalreiserechte</strong> anwendbar<br>
+        → Booking.com haftet wie ein Reiseveranstalter<br>
+        → Rückführungspflicht, Betreuungspflichten für alle 8 Tage, Minderung des Reisepreises<br>
+        → Gesamtschuldnerische Haftung von Booking.com B.V. + Gotogate (OY SRG Finland AB)<br><br>
+        <strong>Zusätzliche Ansprüche bei LTA-Haftung:</strong> Reisepreisminderung für 8 verlorene Tage, Schadensersatz für entgangene Urlaubsfreude (§ 651n BGB), volle Betreuungskosten.<br>
+        <strong>Status:</strong> Darius hat am 12.3. danach gefragt – 7-Tage-Frist am 20.3. abgelaufen, keine Antwort = Schweigen als Eingeständnis verwertbar.<br>
+        <strong>Einschätzung:</strong> <span class="badge badge-r">Game-Changer – sofort prüfen ob Formblatt existiert</span>
+      </div>
+    </div>
+    <div class="claim-amount" style="color:var(--red);">2.000–5.000 €</div>
+  </div>
+
+  <!-- CLAIM 6 -->
+  <div class="claim-row">
+    <div>
+      <div class="claim-name">6. Schadensersatz wegen Vermittlerpflichtverletzung</div>
+      <div class="claim-basis">
+        <strong>§ 280 Abs. 1 BGB</strong> – Verletzung vertraglicher Nebenpflichten durch Gotogate/Booking.<br>
+        <strong>Gegen:</strong> Gotogate + Booking.com.<br>
+        <strong>Dokumentierte Verstöße:</strong> (a) Versuchte Irreführung zur Selbststornierung, (b) Verweigerung des Re-Routings, (c) Gebrochenes Versprechen, (d) Verweis an Airline statt eigener Hilfe.<br>
+        <strong>Einschätzung:</strong> <span class="badge badge-g">Stark – lückenlos durch Chat-Transkript belegt</span>
+      </div>
+    </div>
+    <div class="claim-amount" style="color:var(--green);">1.000–2.000 €</div>
+  </div>
+
+  <!-- CLAIM 7 -->
+  <div class="claim-row">
+    <div>
+      <div class="claim-name">7. Vorgerichtliche Anwaltskosten</div>
+      <div class="claim-basis">
+        <strong>§ 249 BGB + BGH-Rechtsprechung:</strong> Vorgerichtliche Rechtsanwaltskosten sind als Verzugsschaden erstattungsfähig, wenn die Inanspruchnahme eines Anwalts erforderlich und zweckmäßig war. BGH bestätigt dies für Fluggastrechtsfälle (<a href="https://www.anwalt.de/rechtstipps/bgh-vorgerichtliche-rechtsanwaltskosten-bei-flugverspaetung-sind-erstattungsfaehig-193150.html" style="color:var(--accent);">BGH-Urteil</a>).<br>
+        <strong>Einschätzung:</strong> <span class="badge badge-b">Falls Anwalt eingeschaltet wird</span>
+      </div>
+    </div>
+    <div class="claim-amount" style="color:var(--blue);">~500–1.500 €</div>
+  </div>
+
+  <!-- CLAIM 8 – NEU: Emirates Verspätung -->
+  <div class="claim-row">
+    <div>
+      <div class="claim-name">8. Emirates-Flugverspätung – Zusätzliche Kosten</div>
+      <div class="claim-basis">
+        <strong>EU-VO 261/2004 + Art. 19 Montrealer Übereinkommen:</strong> Die selbst gebuchten Emirates-Flüge (EK369 DPS→DXB, EK51 DXB→MUC, Ref. EM8Q2B) hatten zusätzliche Verspätungen, was die Andaz-Verlängerungen erzwang.<br>
+        <strong>Gegen:</strong> Emirates (direkt) – separate Ansprüche als neuer Beförderungsvertrag.<br>
+        <strong>Ansprüche:</strong> (a) Zusätzliche Andaz-Hotelkosten durch Verlängerungen, (b) Bei >3h Verspätung: EU-261-Ausgleich 600 EUR/Person (DPS→MUC >3.500 km), (c) Zusätzliche Verpflegung/Transport.<br>
+        <strong>Wichtig:</strong> Verspätungsnachweis sichern (Boarding-Pass-Zeiten, FlightAware-Screenshots). Frist: 2 Jahre ab Flugdatum (Art. 35 MÜ).<br>
+        <strong>Einschätzung:</strong> <span class="badge badge-a">Prüfen – Verspätungsdauer entscheidend</span>
+      </div>
+    </div>
+    <div class="claim-amount" style="color:var(--amber);">bis 1.200+ €</div>
+  </div>
+
+  <!-- CLAIM 9 -->
+  <div class="claim-row">
+    <div>
+      <div class="claim-name">9. Verzugszinsen</div>
+      <div class="claim-basis">
+        <strong>§§ 286, 288 BGB:</strong> 5 Prozentpunkte über Basiszinssatz ab Verzugseintritt. QR in Verzug seit 15.3. (Fristablauf), Gotogate ab 27.3.<br>
+        <strong>Einschätzung:</strong> <span class="badge badge-b">Automatisch – läuft ab Verzug</span>
+      </div>
+    </div>
+    <div class="claim-amount" style="color:var(--blue);">laufend</div>
+  </div>
+
+  <!-- TOTALS -->
+  <div class="total-bar" style="margin-top:20px;">
+    <div>
+      <div class="total-label">Konservativ (ohne LTA)</div>
+      <div style="font-size:11px;color:var(--text-3);">Erstattung + Betreuung (Andaz) + Emirates-Differenz + EU 261</div>
+    </div>
+    <div class="total-val" style="font-size:22px;">~6.800–8.000 €</div>
+  </div>
+  <div class="total-bar" style="background:linear-gradient(135deg, rgba(52,211,153,0.12), rgba(129,140,248,0.08)); border-color:rgba(52,211,153,0.2);">
+    <div>
+      <div class="total-label">Maximiert (MIT LTA-Hebel + Emirates-Delay-Claims)</div>
+      <div style="font-size:11px;color:var(--text-3);">+ § 651w Pauschalreiserechte + Vermittlerhaftung + Emirates-Verspätung + Anwaltskosten</div>
+    </div>
+    <div class="total-val">11.000–16.000+ €</div>
+  </div>
+
+  <div class="alert alert-red" style="margin-top:16px;">
+    <strong>Sofort prüfen:</strong> Hat Booking.com bei der Buchung das LTA-Formblatt (verbundene Reiseleistung) angezeigt? Darius soll die Original-Buchungsbestätigung und den Buchungsprozess (Screenshots, E-Mails) durchgehen. Wenn das Formblatt fehlt → §651w Abs. 4 BGB → volle Pauschalreiserechte → maximale Haftung Booking.com.
+  </div>
+</div>
+
+<!-- ═══ AKTIONSPLAN ═══ -->
+<div class="card">
+  <div class="card-title"><div class="ico ico-r">🎯</div> Aktionsplan – Was genau wann</div>
+
+  <div class="step">
+    <div class="step-num urgent">1</div>
+    <div>
+      <div class="step-title">Belege sammeln & Emirates-Kosten beziffern</div>
+      <div class="step-when">SOFORT – bis 24. März</div>
+      <div class="step-desc">
+        (a) Emirates-Buchungsbestätigung (Ref. EM8Q2B) mit Gesamtpreis von Darius anfordern<br>
+        (b) Kreditkartenabrechnung mit Emirates-Zahlung sichern<br>
+        (c) Alle <strong>Andaz Bali</strong>-Rechnungen zusammenstellen (Erstbuchung + 2 Verlängerungen wegen Emirates-Delays)<br>
+        (d) Restaurant-/Transport-/Kommunikationsbelege sammeln<br>
+        (e) Gesamtschadensliste in Tabelle aufstellen<br>
+        (f) <strong>LTA-Formblatt prüfen:</strong> Booking.com-Buchungsprozess rekonstruieren – wurde das Formblatt für verbundene Reiseleistung angezeigt?
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num urgent">2</div>
+    <div>
+      <div class="step-title">Gotogate-Teilerstattung beantragen</div>
+      <div class="step-when">SOFORT – bis 24. März</div>
+      <div class="step-desc">
+        Die angebotene Teilerstattung über den Link in der Stornierungsmail vom 13.3. beantragen. Das ist der unstreitige Erstattungsanspruch für den Rückflug-Anteil (~784 EUR). Wichtig: Dies schließt weitergehende Schadensersatzansprüche NICHT aus.
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num urgent">3</div>
+    <div>
+      <div class="step-title">2. Mahnung an Gotogate/Booking.com nach Fristablauf</div>
+      <div class="step-when">27. März 2026 (5 Tage)</div>
+      <div class="step-desc">
+        Falls bis 27.3. keine Antwort:<br>
+        (a) Feststellung Fristablauf + Verzugseintritt<br>
+        (b) Bezifferte Schadensersatzforderung (Emirates-Differenz + Betreuungskosten)<br>
+        (c) LTA-Argument: Schweigen auf Formblatt-Frage = kein Formblatt = § 651w Abs. 4 BGB<br>
+        (d) Nachfrist 7 Tage<br>
+        (e) Ankündigung: Chargeback, EVZ, KKV (Finnland), ACM (Niederlande), ggf. Klage
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num urgent">4</div>
+    <div>
+      <div class="step-title">Bezifferte Forderung an Qatar Airways</div>
+      <div class="step-when">Bis 28. März 2026</div>
+      <div class="step-desc">
+        Per E-Mail + Einschreiben an QR-Büro Frankfurt:<br>
+        (a) Erstattung Rückflug (784 EUR) + Emirates-Differenzkosten + Betreuungskosten 8 Tage<br>
+        (b) Ausgleichszahlung 1.200 EUR (Art. 7 EU 261) mit Begründung: Re-Routing verweigert = keine vollständige Exkulpation<br>
+        (c) Nachfrist 14 Tage<br>
+        (d) Hinweis auf SRV-Schlichtung und LBA-Beschwerde
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num normal">5</div>
+    <div>
+      <div class="step-title">Behördliche Beschwerden einreichen</div>
+      <div class="step-when">Ab 4. April 2026</div>
+      <div class="step-desc">
+        (a) <strong>LBA (Luftfahrt-Bundesamt):</strong> EU 261 Beschwerde gegen Qatar Airways<br>
+        (b) <strong>EVZ (Europäisches Verbraucherzentrum):</strong> Grenzüberschreitender Streit mit Gotogate (FI) + Booking (NL)<br>
+        (c) <strong>KKV (Finnland):</strong> Gegen OY SRG Finland AB (Gotogate)<br>
+        (d) <strong>ACM (Niederlande):</strong> Gegen Booking.com B.V.
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num normal">6</div>
+    <div>
+      <div class="step-title">Chargeback über American Express</div>
+      <div class="step-when">Ab 4. April (falls keine Erstattung)</div>
+      <div class="step-desc">
+        Grund: „Service not rendered". Frist: 120 Tage ab 8. März = ca. 6. Juli 2026. Frühzeitig einleiten! Kann parallel zu rechtlichen Schritten laufen – bei Erstattung zurückziehen. Erfolgsquote: ~78%.
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num normal">7</div>
+    <div>
+      <div class="step-title">SRV-Schlichtung (kostenlos)</div>
+      <div class="step-when">Ab Mai 2026</div>
+      <div class="step-desc">
+        <strong>Schlichtungsstelle Reise & Verkehr (ehem. SÖP):</strong> schlichtung-reise-und-verkehr.de – kostenlos für Verbraucher, gute Erfolgsquote bei Airlines. Alternativ: EU Online-Streitbeilegung (ODR) für Gotogate/Booking.
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num normal">8</div>
+    <div>
+      <div class="step-title">Gerichtliches Vorgehen (Ultima Ratio)</div>
+      <div class="step-when">Ab Juli 2026</div>
+      <div class="step-desc">
+        AG München (Wohnsitz Laura). Bei Streitwert < 5.000 EUR: kein Anwaltszwang. Klagefrist Montreal Convention: 2 Jahre ab 17.3.2026 = 17.3.2028. BGB-Verjährung: 31.12.2029.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BEWEISMITTEL ═══ -->
+<div class="card">
+  <div class="card-title"><div class="ico ico-p">📁</div> Gesicherte Beweismittel</div>
+  <div class="ev">Booking.com Buchungsbestätigung 19.01.2026 (Ref. 40-869611431, 1.568 EUR, Flug + Hotel)</div>
+  <div class="ev">Gotogate Chat-Transkript 07.03.2026 – Agent Khiem – Irreführung, Re-Routing-Verweigerung, Alternativversprechen</div>
+  <div class="ev">Booking.com Umbuchungsbestätigung 07.03.2026 (QR961/QR57 auf 15.3.)</div>
+  <div class="ev">Gotogate Stornierungsmail 13.03.2026, 03:31 WITA – nur Erstattung, keine Alternativen</div>
+  <div class="ev">Gotogate E-Mail 13.03.2026, 02:02 WITA – Verweis an Fluggesellschaft</div>
+  <div class="ev">Formale Forderung an Qatar Airways vom 12.03.2026 (mit 6 Anlagen)</div>
+  <div class="ev">Formale Forderung an Gotogate/Booking.com vom 12.03.2026 (mit 6 Anlagen)</div>
+  <div class="ev">Emirates Check-in E-Mail 14.03.2026 – Ref. EM8Q2B, EK369 DPS→DXB, 2 Passagiere</div>
+  <div class="ev">FlightAware/FlightStats Screenshots – Emirates EK369 & EK051 täglich operating</div>
+  <div class="ev">Emirates Fluginfo PDF – EK369 „Pünktliche Abreise" (Beweis: Alternativen existierten)</div>
+  <div class="ev">Emirates Preisscreenshots – DPS→DXB ab IDR 23.807.000 / DXB→MUC ab AED 5.920</div>
+  <div class="ev">Hotelbestätigung Abisena Wellness & Resort Ubud 25.01.2026 (Urlaubshotel – für LTA-Argument)</div>
+  <div class="ev" style="border-left-color:var(--amber);">Andaz Bali – Stranding-Hotel ab 8. März – Rechnungen ausstehend (2× verlängert wg. Emirates-Delays)</div>
+
+  <div class="alert alert-amber">
+    <strong>Noch zu sichern:</strong> (1) Emirates-Buchungsbestätigung EM8Q2B mit Gesamtpreis, (2) Kreditkartenabrechnung, (3) <strong>Andaz Bali-Rechnungen</strong> (Erstbuchung + 2 Verlängerungen), (4) Restaurant-/Transportbelege, (5) Booking.com-Buchungsprozess für LTA-Formblatt-Prüfung, (6) ggf. Visum-Verlängerung Indonesien, (7) <strong>Emirates Verspätungs-Nachweis</strong> (als Grund für Andaz-Verlängerungen).
+  </div>
+</div>
+
+<!-- ═══ FRISTEN ═══ -->
+<div class="card">
+  <div class="card-title"><div class="ico ico-r">📅</div> Fristenkalender</div>
+  <table>
+    <thead><tr><th>Datum</th><th>Frist / Aktion</th><th>Prio</th></tr></thead>
+    <tbody>
+      <tr><td style="white-space:nowrap;font-weight:600;">24. Mär.</td><td>Belege sammeln, Emirates beziffern, LTA-Formblatt prüfen, Gotogate-Erstattung beantragen</td><td><span class="badge badge-r">SOFORT</span></td></tr>
+      <tr><td style="white-space:nowrap;font-weight:600;">27. Mär.</td><td>Gotogate 14-Tage-Frist läuft ab → 2. Mahnung mit bezifferter Forderung</td><td><span class="badge badge-r">KRITISCH</span></td></tr>
+      <tr><td style="white-space:nowrap;font-weight:600;">28. Mär.</td><td>Bezifferte Forderung an Qatar Airways</td><td><span class="badge badge-r">KRITISCH</span></td></tr>
+      <tr><td style="white-space:nowrap;font-weight:600;">4. Apr.</td><td>Behördliche Beschwerden (LBA, EVZ, KKV, ACM) + Chargeback Amex</td><td><span class="badge badge-a">HOCH</span></td></tr>
+      <tr><td style="white-space:nowrap;font-weight:600;">Mai '26</td><td>SRV-Schlichtung einleiten (kostenlos)</td><td><span class="badge badge-b">MITTEL</span></td></tr>
+      <tr><td style="white-space:nowrap;font-weight:600;">6. Jul. '26</td><td>Äußerste Frist Amex Chargeback (120 Tage ab 8.3.)</td><td><span class="badge badge-r">DEADLINE</span></td></tr>
+      <tr><td style="white-space:nowrap;font-weight:600;">17. Mär. '28</td><td>Klagefrist Montrealer Übereinkommen (2 Jahre ab Ankunft)</td><td><span class="badge badge-b">LANGFRIST</span></td></tr>
+      <tr><td style="white-space:nowrap;font-weight:600;">31. Dez. '29</td><td>Verjährung BGB-Ansprüche</td><td><span class="badge badge-b">LANGFRIST</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══ STRATEGIE ═══ -->
+<div class="card">
+  <div class="card-title"><div class="ico ico-b">🧠</div> Strategische Bewertung</div>
+
+  <p><strong>Eure Position ist stark – und Darius hat in der akuten Situation alles richtig gemacht.</strong> Die Selbststornierung verweigert, die Irreführung erkannt und dokumentiert, das Chat-Transkript gesichert, formale Forderungsschreiben mit Rechtsgrundlagen geschickt, und letztlich den Deckungskauf über Emirates vorgenommen.</p>
+
+  <p><strong>Die Schlüsselstärke</strong> ist die lückenlose Dokumentation. Das Gotogate-Chat-Transkript ist ein Beweisstück erster Güte. Es zeigt keine Missverständnisse, sondern ein systematisches Muster: erst zur Selbststornierung drängen (Rechtsverlust), dann Re-Routing verweigern (obwohl Art. 10.2.1(ii) QR CoC es vorsieht), dann Alternativen versprechen und nicht liefern.</p>
+
+  <p><strong>Der LTA-Hebel (§ 651w BGB) ist der potenzielle Game-Changer.</strong> Wenn Booking.com Flug + Hotel für dieselbe Reise vermittelt hat, ohne das LTA-Formblatt bereitzustellen, wird aus einem Vermittlerverhältnis eine Pauschalreise-Haftung. Das bedeutet: Booking.com haftet für die Rückführung, für 8 Tage Unterkunft und Verpflegung, für Reisepreisminderung und sogar für entgangene Urlaubsfreude nach § 651n BGB. Dieser eine Punkt kann den Anspruch von ~6.000 EUR auf 10.000–15.000 EUR heben.</p>
+
+  <div class="alert alert-green">
+    <strong>Empfohlene Priorität:</strong> (1) Belege + LTA-Formblatt prüfen → (2) Gotogate-Erstattung beantragen → (3) Bezifferte Forderungen nach Fristablauf → (4) Chargeback + Behörden parallel → (5) SRV-Schlichtung → (6) Klage nur als letztes Mittel
+  </div>
+
+  <p style="font-size:12px;color:var(--text-3);margin-top:12px;"><strong>Quellen:</strong> EU-VO 261/2004 (EUR-Lex), Montrealer Übereinkommen Art. 19/35, §§ 280, 249, 281, 286, 288, 651w BGB, BGH-Rechtsprechung zur Umleitung auf andere Carrier, CJEU Sturgeon/Wallentin-Hermann, EU-RL 2015/2302 Art. 3(5), SRV (schlichtung-reise-und-verkehr.de).</p>
+</div>
+
+<div class="footer">
+  <strong>Hinweis:</strong> Diese Analyse dient der Orientierung und stellt keine Rechtsberatung im Sinne des RDG dar. Vor Einleitung gerichtlicher Schritte empfehlen wir, einen auf Reiserecht spezialisierten Rechtsanwalt zu konsultieren.<br>
+  Erstellt am 22. März 2026 · v2 · Gasperetti & Suryadi vs. Qatar Airways / Gotogate / Booking.com
+</div>
+
+</div>
+</body>
+</html>
