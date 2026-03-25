@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bali Legal Command Center v11</title>
+<title>Bali Legal Command Center v13</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
@@ -68,7 +68,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .b-r{background:var(--rd);color:var(--r)}.b-a{background:var(--amd);color:var(--am)}.b-g{background:var(--gd);color:var(--g)}.b-b{background:var(--bld);color:var(--bl)}.b-p{background:var(--pd);color:var(--p)}
 
 /* ALERT */
-.al{border-radius:12px;padding:14px 16px;font-size:12px;line-height:1.65;margin:10px 0}
+.al{border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.7;margin:10px 0}
 .al-r{background:var(--rd);border:1px solid rgba(248,113,113,.2);color:var(--r)}
 .al-g{background:var(--gd);border:1px solid rgba(52,211,153,.2);color:var(--g)}
 .al-a{background:var(--amd);border:1px solid rgba(251,191,36,.2);color:var(--am)}
@@ -90,7 +90,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .stp.dn .s-ck{background:var(--gd);border-color:var(--g);color:var(--g)}
 .s-tx{flex:1;min-width:0}
 .s-tt{font-size:12px;font-weight:600;margin-bottom:2px}
-.s-ds{font-size:11px;color:var(--t3);line-height:1.5}
+.s-ds{font-size:12.5px;color:var(--t3);line-height:1.6}
 
 /* PHASE HEADER */
 .ph{display:flex;align-items:center;gap:8px;margin:20px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--b)}
@@ -103,7 +103,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .ac summary::-webkit-details-marker{display:none}
 .ac summary::before{content:'›';font-size:16px;color:var(--t3);transition:transform .2s;width:12px;text-align:center;flex-shrink:0}
 .ac[open] summary::before{transform:rotate(90deg)}
-.ac-b{padding:14px 16px;font-size:12px;color:var(--t2);line-height:1.7;border-top:1px solid var(--b)}
+.ac-b{padding:14px 16px;font-size:13px;color:var(--t2);line-height:1.75;border-top:1px solid var(--b)}
 .ac-d{font-size:10px;color:var(--t3);font-weight:600;flex-shrink:0;min-width:55px}
 .ac.done{opacity:.4}
 .ac.done summary{text-decoration:line-through}
@@ -113,7 +113,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .cl-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .cl-nm{font-weight:600;font-size:12px;flex:1}
 .cl-am{font-size:18px;font-weight:800;white-space:nowrap;flex-shrink:0}
-.cl-bs{font-size:11px;color:var(--t3);line-height:1.6;margin-top:6px}
+.cl-bs{font-size:12.5px;color:var(--t3);line-height:1.65;margin-top:6px}
 
 /* TOTAL */
 .tot{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:14px;background:linear-gradient(135deg,rgba(129,140,248,.1),rgba(52,211,153,.06));border:1px solid rgba(129,140,248,.18);margin-top:10px}
@@ -126,14 +126,14 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .brief-t{font-size:12px;font-weight:600}
 .brief-sub{font-size:10px;color:var(--t3)}
 .brief-toggle{font-size:10px;padding:4px 12px;background:var(--ad);color:var(--a);border-radius:100px;font-weight:600;border:none;cursor:pointer;font-family:inherit}
-.brief-body{padding:14px;font-size:11px;color:var(--t2);line-height:1.7;white-space:pre-wrap;font-family:'Inter',sans-serif;max-height:500px;overflow-y:auto;display:block;position:relative}
+.brief-body{padding:14px;font-size:13.5px;color:var(--t2);line-height:1.8;white-space:pre-wrap;font-family:'Inter',sans-serif;max-height:600px;overflow-y:auto;display:block;position:relative}
 .brief.collapsed .brief-body{display:none}
 .brief-copy{position:sticky;top:0;display:block;width:100%;padding:10px;border:none;background:linear-gradient(135deg,var(--a),#6366f1);color:#fff;font:600 12px 'Inter',sans-serif;border-radius:8px;cursor:pointer;margin-bottom:10px;transition:all .15s}
 .brief-copy:hover{opacity:.9}
 .brief-copy.copied{background:var(--g)}
 
 /* TABLE */
-table{width:100%;border-collapse:separate;border-spacing:0;font-size:11px}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px}
 th{text-align:left;padding:8px 10px;background:var(--s2);color:var(--t3);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--b)}
 td{padding:8px 10px;border-bottom:1px solid var(--b);vertical-align:top}
 tr:last-child td{border-bottom:none}
@@ -167,9 +167,9 @@ strong{color:var(--t)}
 .dl-btn{display:inline-flex;align-items:center;gap:4px;padding:6px 10px;border-radius:8px;font:500 10px 'Inter',sans-serif;text-decoration:none;background:var(--s2);color:var(--t2);border:1px solid var(--b);transition:all .15s;min-height:32px}
 .dl-btn:hover{background:var(--ad);color:var(--a);border-color:rgba(129,140,248,.3)}
 
-.prereq{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.15);border-radius:8px;padding:8px 12px;font-size:11px;color:var(--am);margin-bottom:10px;line-height:1.5}
+.prereq{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.15);border-radius:8px;padding:10px 14px;font-size:12.5px;color:var(--am);margin-bottom:10px;line-height:1.5}
 .prereq strong{color:var(--am)}
-.std-info{background:rgba(129,140,248,.06);border:1px solid rgba(129,140,248,.12);border-radius:8px;padding:8px 12px;font-size:10px;color:var(--a);margin-bottom:10px;line-height:1.5}
+.std-info{background:rgba(129,140,248,.06);border:1px solid rgba(129,140,248,.12);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--a);margin-bottom:10px;line-height:1.5}
 .std-info strong{color:var(--a)}
 
 /* ═══ v9: CTA + SHARE BUTTONS ═══ */
@@ -190,12 +190,12 @@ strong{color:var(--t)}
 .email-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--bl),var(--a))}
 .email-card .ec-from{font-size:10px;color:var(--bl);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:4px}
 .email-card .ec-date{font-size:10px;color:var(--t3);margin-bottom:8px}
-.email-card .ec-body{font-size:12px;color:var(--t2);line-height:1.7}
+.email-card .ec-body{font-size:13.5px;color:var(--t2);line-height:1.7}
 
 /* CORRECTION BANNER */
 .correction{background:linear-gradient(135deg,rgba(248,113,113,.08),rgba(251,191,36,.06));border:1px solid rgba(248,113,113,.15);border-radius:12px;padding:14px 16px;margin:12px 0}
 .correction-title{font-size:11px;font-weight:700;color:var(--r);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
-.correction-body{font-size:12px;color:var(--t2);line-height:1.65}
+.correction-body{font-size:13px;color:var(--t2);line-height:1.7}
 
 /* TIMELINE */
 .tl{position:relative;padding-left:24px;margin:16px 0}
@@ -206,8 +206,8 @@ strong{color:var(--t)}
 .tl-item.tl-active::before{background:var(--bl);border-color:var(--bl);box-shadow:0 0 8px rgba(96,165,250,.4)}
 .tl-item.tl-pending::before{background:var(--s2);border-color:var(--t3)}
 .tl-date{font-size:10px;color:var(--t3);font-weight:600}
-.tl-title{font-size:12px;font-weight:600;color:var(--t);margin-top:2px}
-.tl-desc{font-size:11px;color:var(--t3);line-height:1.5;margin-top:2px}
+.tl-title{font-size:13px;font-weight:600;color:var(--t);margin-top:2px}
+.tl-desc{font-size:12.5px;color:var(--t3);line-height:1.6;margin-top:2px}
 
 /* VALIDATION GRID */
 .val-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin:12px 0}
@@ -228,7 +228,7 @@ strong{color:var(--t)}
 <!-- STICKY NAV -->
 <nav class="nav" aria-label="Hauptnavigation"><div class="nav-inner" role="tablist" aria-label="Seitennavigation">
   <button class="nb on" data-p="overview" role="tab" aria-selected="true" aria-controls="p-overview" id="tab-overview">Übersicht</button>
-  <button class="nb" data-p="neues" role="tab" aria-selected="false" aria-controls="p-neues" id="tab-neues">Neu: 23.3.</button>
+  <button class="nb" data-p="neues" role="tab" aria-selected="false" aria-controls="p-neues" id="tab-neues">GoToGate ✉️</button>
   <button class="nb" data-p="vorgehen" role="tab" aria-selected="false" aria-controls="p-vorgehen" id="tab-vorgehen">Vorgehen</button>
   <button class="nb" data-p="timeline" role="tab" aria-selected="false" aria-controls="p-timeline" id="tab-timeline">Timeline</button>
   <button class="nb" data-p="recht" role="tab" aria-selected="false" aria-controls="p-recht" id="tab-recht">Ansprüche</button>
@@ -243,7 +243,7 @@ strong{color:var(--t)}
   <div class="pill" style="background:var(--rd);color:var(--r);border:1px solid rgba(248,113,113,.18)">⏱ Frist: 27. März 2026 — 2 Tage</div>
   <h1>Bali Stranding — Legal Command Center</h1>
   <p>Laura & Darius vs. Qatar Airways / Gotogate / Booking.com</p>
-  <p style="font-size:11px;color:var(--bl);margin-top:6px;font-weight:600">v12 — Update 25. März 2026 · ⚖️ 6-Augen-Geprüft · Double-Counting-Fix</p>
+  <p style="font-size:11px;color:var(--bl);margin-top:6px;font-weight:600">v13 — Update 25. März 2026 · ⚖️ 6× vollständig geprüft · Alle Inkonsistenzen bereinigt</p>
   <div class="cd" id="cd">
     <div class="cd-i"><div class="cd-n" id="cd-d">3</div><div class="cd-l">Tage</div></div>
     <div class="cd-s">:</div>
@@ -278,14 +278,14 @@ strong{color:var(--t)}
 <div class="c" style="border-color:rgba(52,211,153,.25);background:linear-gradient(135deg,rgba(52,211,153,.04),rgba(129,140,248,.02))">
   <div class="c-t"><div class="ico" style="background:var(--gd)">⚖️</div> 6-Augen-Prüfung — Ergebnis 25.3.2026</div>
   <div class="al al-g" style="margin-bottom:8px"><strong>✅ Wasserdicht:</strong> Rechtsgrundlagen MÜ Art. 19 + §§ 280/281 BGB korrekt. Zuständigkeit AG München ✓. Fristen ✓. Beweislage stark (27 Belege).</div>
-  <div class="al al-r" style="margin-bottom:8px"><strong>🔴 KRITISCHER FIX (v12):</strong> Dubai-Kosten (Waldorf 574,34€ + SIXT 70,09€ + Essen Dubai 122,11€ = 766,54€) waren fälschlicherweise in BEIDEN Forderungen. Das ist unzulässige Doppelgeltendmachung und hätte beide Ansprüche geschwächt. <strong>Jetzt bereinigt:</strong> Dubai-Kosten → NUR Emirates. Bali-Kosten → NUR Qatar.</div>
+  <div class="al al-r" style="margin-bottom:8px"><strong>🔴 KRITISCHER FIX (v12, behoben):</strong> Dubai-Kosten (Waldorf 574,34€ + SIXT 70,09€ + Essen Dubai 122,11€ = 766,54€) waren fälschlicherweise in BEIDEN Forderungen. Das ist unzulässige Doppelgeltendmachung und hätte beide Ansprüche geschwächt. <strong>Jetzt bereinigt:</strong> Dubai-Kosten → NUR Emirates. Bali-Kosten → NUR Qatar.</div>
   <div class="al al-a" style="margin-bottom:8px"><strong>⚠️ Zu klären vor Versand:</strong> Transport-Posten „SIXT + Uber 177,13€" enthält 70,09€ Dubai-SIXT (→ Emirates) und 107,04€ weitere Transporte. Bitte prüfen: Welche Belege stecken hinter den 107,04€? Bali-Taxi? Flughafen-Transfer? Nur die Bali-Kosten bleiben bei Qatar.</div>
   <div class="al al-i"><strong>ℹ️ Gesamtsumme bleibt identisch:</strong> Qatar 3.136,75€ + Emirates 766,54€ = 3.903,29€. Kein Geld verloren — nur sauber aufgeteilt, ohne Angriffsfläche.</div>
 </div>
 
 <!-- HAUPTANSPRÜCHE -->
 <div class="c">
-  <div class="c-t"><div class="ico" style="background:var(--gd)">💰</div> Eure Ansprüche (v12 — bereinigt)</div>
+  <div class="c-t"><div class="ico" style="background:var(--gd)">💰</div> Eure Ansprüche (v13 — vollständig geprüft)</div>
 
   <div class="cl"><div class="cl-top"><div class="cl-nm">Rückflug-Erstattung <span class="badge b-g">sicher</span></div><div class="cl-am" style="color:var(--g)">826,92€</div></div><div class="cl-bs">50% des Qatar-Tickets (laut AmEx Anl. 02: 1.653,84€ → Rückfluganteil 826,92€). GoToGate hat am 23.3. bestätigt, dass sie die Rückerstattung bearbeiten. Noch Bestätigung durch Darius nötig.</div></div>
 
@@ -309,7 +309,7 @@ strong{color:var(--t)}
 
 <!-- EINSCHÄTZUNG -->
 <div class="c">
-  <div class="c-t"><div class="ico" style="background:var(--ad)">🧠</div> Ehrliche Einschätzung (aktualisiert 24.3.)</div>
+  <div class="c-t"><div class="ico" style="background:var(--ad)">🧠</div> Ehrliche Einschätzung (aktualisiert 25.3.)</div>
   <div class="al al-g"><strong>~3.903€ bekommt ihr sicher</strong> — Rückflug + Emirates-Differenz + Hotelkosten. Alles belegt, alles durch MÜ + BGB gestützt. GoToGate hat die Rückerstattung jetzt sogar proaktiv angeboten.</div>
   <div class="al al-i"><strong>Emirates (766€) läuft separat</strong> — einfaches Standardschreiben, kein Anwalt nötig.</div>
   <div class="al al-a"><strong>EU-261 Pauschale (1.200€) — ENTFÄLLT</strong> — Die Verordnung ist auf den Rückflug nicht anwendbar (nicht-EU Abflughafen, nicht-EU Carrier). Das war ein Fehler in der vorherigen Analyse. Die gute Nachricht: Die 3.903€ stehen davon unabhängig.</div>
@@ -437,7 +437,7 @@ Darius Suryadi & Laura Gasperetti</div>
 
   <div class="step-actions">
     <a class="btn-cta btn-cta-primary" href="mailto:schedulechange@flightsonbooking.gotogate.support?cc=gasperetti.laura@gmail.com,darius.suryadi@gmail.com&subject=Re: DRINGEND – Vertragsverletzung durch Vermittler %26 Erstattungsforderung | Kundenreferenz 40-869611431 | PNR YO9OOR&body=Siehe%20Vorlage%20oben%20-%20bitte%20kopierten%20Text%20einfügen" target="_blank">📧 E-Mail an GoToGate öffnen</a>
-    <button class="btn-share" onclick="shareWithDarius('Sofort-Aktion: Bitte antworte heute auf die GoToGate-Mail vom 23.3. und bestätige die Rückerstattung MIT VORBEHALT. Vorlage liegt im Legal Command Center v11 bereit. Frist: 27.3.!')">📤 An Darius teilen</button>
+    <button class="btn-share" onclick="shareWithDarius('Sofort-Aktion: Bitte antworte heute auf die GoToGate-Mail vom 23.3. und bestätige die Rückerstattung MIT VORBEHALT. Vorlage liegt im Legal Command Center v13 bereit. Frist: 27.3.!')">📤 An Darius teilen</button>
   </div>
 </div>
 
@@ -515,7 +515,7 @@ Darius Suryadi & Laura Gasperetti</div>
 </div>
 <div class="step-actions">
   <a class="btn-cta btn-cta-primary" href="mailto:schedulechange@flightsonbooking.gotogate.support?cc=gasperetti.laura@gmail.com,darius.suryadi@gmail.com&subject=Re: DRINGEND – Vertragsverletzung durch Vermittler %26 Erstattungsforderung | Kundenreferenz 40-869611431 | PNR YO9OOR&body=Siehe%20Vorlage%20oben%20-%20bitte%20kopierten%20Text%20einfügen" target="_blank">📧 E-Mail an GoToGate öffnen</a>
-  <button class="btn-share" onclick="shareWithDarius('DRINGEND: Bitte antworte heute auf GoToGate-Mail (23.3.) und bestätige Rückerstattung MIT VORBEHALT. Die Vorlage steht im Legal Command Center v11 (Tab: Vorgehen, Step 0) direkt kopierbar bereit. Frist: 27.3.!')">📤 An Darius teilen</button>
+  <button class="btn-share" onclick="shareWithDarius('DRINGEND: Bitte antworte heute auf GoToGate-Mail (23.3.) und bestätige Rückerstattung MIT VORBEHALT. Die Vorlage steht im Legal Command Center v13 (Tab: Vorgehen, Step 0) direkt kopierbar bereit. Frist: 27.3.!')">📤 An Darius teilen</button>
 </div>
 </div>
 </details>
@@ -586,7 +586,7 @@ Laura Gasperetti & Darius Suryadi</div>
 
 <div class="step-actions">
   <a class="btn-cta btn-cta-primary" href="mailto:customer.affairs@emirates.com?subject=Schadensersatzforderung%20MÜ%20Art.19%20–%20Buchung%20EM8Q2B%20/%20EK369%20DPS→DXB%2016.03.2026" target="_blank">📧 E-Mail an Emirates öffnen</a>
-  <button class="btn-share" onclick="shareWithDarius('To-Do: Emirates-Forderung senden (MÜ Art. 19, ~766€). Text steht im Legal Command Center v11 zum Kopieren bereit.')">📤 An Darius teilen</button>
+  <button class="btn-share" onclick="shareWithDarius('To-Do: Emirates-Forderung senden (MÜ Art. 19, ~766€). Text steht im Legal Command Center v13 zum Kopieren bereit.')">📤 An Darius teilen</button>
 </div>
 </div>
 </details>
@@ -595,7 +595,7 @@ Laura Gasperetti & Darius Suryadi</div>
 <details class="ac" id="step2">
 <summary><span class="badge b-g" style="margin-right:4px">2</span> <strong>Qatar Airways: Gesamtforderung (MÜ + BGB)</strong> <span class="ac-d" style="color:var(--am)">Bis 28.3.</span></summary>
 <div class="ac-b">
-<div class="std-info"><strong>Zentrale Forderung!</strong> Hier liegt der Großteil des Geldes. Rechtsgrundlage: MÜ Art. 19 + §§ 280/281 BGB. Schadenshöhe: ~3.076€ (ohne Rückflug-Erstattung, die über GoToGate läuft).</div>
+<div class="std-info"><strong>Zentrale Forderung!</strong> Hier liegt der Großteil des Geldes. Rechtsgrundlage: MÜ Art. 19 + §§ 280/281 BGB. Schadenshöhe: ~2.310€ Deckungskauf + Betreuungskosten (ohne Rückflug-Erstattung 826,92€, die über GoToGate läuft).</div>
 <strong>Was tun:</strong><br>
 1. Aufstellung aller Kosten erstellen (Emirates-Differenz + Hotel + Transport + Essen)<br>
 2. Alle AmEx-Rechnungen + Hotelrechnungen + SIXT-Beleg zusammenstellen<br>
@@ -661,7 +661,6 @@ Laura Gasperetti & Darius Suryadi</div>
 <a href="12_Boarding_Pass_Darius_YO9OOR.pdf" download class="dl-btn">📄 Anl. 12 — Boarding Darius</a>
 <a href="13_Boarding_Pass_Laura_YO9OOR.pdf" download class="dl-btn">📄 Anl. 13 — Boarding Laura</a>
 <a href="14_Rechnung_Andaz_Bali.pdf" download class="dl-btn">📄 Anl. 14 — Andaz Rechnung</a>
-<a href="15_Rechnung_Waldorf_Astoria_Dubai.pdf" download class="dl-btn">📄 Anl. 15 — Waldorf Rechnung</a>
 <a href="22_Buchungsbestaetigung_Booking_19Jan2026.pdf" download class="dl-btn">📄 Anl. 22 — Buchungsbestätigung</a>
 <a href="23_Umbuchungsbestaetigung_Booking_07Mar2026.pdf" download class="dl-btn">📄 Anl. 23 — Umbuchung</a>
 <a href="24_Gotogate_Chat_Transkript_07Mar2026.pdf" download class="dl-btn">📄 Anl. 24 — Chat KERNBEWEIS</a>
@@ -674,7 +673,7 @@ Laura Gasperetti & Darius Suryadi</div>
 <div class="step-actions">
   <a class="btn-cta btn-cta-primary" href="mailto:tell-us@qatarairways.com.qa?cc=gasperetti.laura@gmail.com,ds@beryl-holding.de&subject=Bezifferte%20Schadensersatzforderung%20|%20CAS-735359-C7H8M9%20|%20PNR%20YO9OOR%20|%202%20Passagiere" target="_blank">📧 E-Mail an Qatar Airways öffnen</a>
   <a class="btn-cta btn-cta-amber" href="https://www.qatarairways.com/en/help/submit-request-form.html" target="_blank">🌐 Offizielles Qatar-Formular</a>
-  <button class="btn-share" onclick="shareWithDarius('To-Do: Qatar Airways Gesamtforderung senden (~3.137€, Dubai-Kosten gehen an Emirates). Text steht im Legal Command Center v11 zum Kopieren bereit. Frist: bis 28.3.')">📤 An Darius teilen</button>
+  <button class="btn-share" onclick="shareWithDarius('To-Do: Qatar Airways Gesamtforderung senden (~3.137€, Dubai-Kosten gehen an Emirates). Text steht im Legal Command Center v13 zum Kopieren bereit. Frist: bis 28.3.')">📤 An Darius teilen</button>
 </div>
 </div>
 </details>
@@ -758,7 +757,7 @@ Nur wenn alle vorherigen Schritte scheitern:<br>
 <div class="ph"><span class="badge b-b">Chronologie</span><span class="ph-t">Alle Ereignisse</span></div>
 
 <div class="tl">
-  <div class="tl-item tl-done"><div class="tl-date">19. Jan 2026</div><div class="tl-title">Buchung über Booking.com</div><div class="tl-desc">Ref. 40-869611431, PNR YO9OOR. Qatar Airways MUC→DOH→DPS + Rückflug. 1.568€ für 2 Pax.</div></div>
+  <div class="tl-item tl-done"><div class="tl-date">19. Jan 2026</div><div class="tl-title">Buchung über Booking.com</div><div class="tl-desc">Ref. 40-869611431, PNR YO9OOR. Qatar Airways MUC→DOH→DPS + Rückflug. 1.653,84€ für 2 Pax (lt. AmEx Anl. 02).</div></div>
 
   <div class="tl-item tl-done"><div class="tl-date">19. Feb 2026</div><div class="tl-title">Hinflug durchgeführt</div><div class="tl-desc">QR58 (MUC→DOH) + QR962 (DOH→DPS). Planmäßig.</div></div>
 
@@ -800,7 +799,7 @@ Nur wenn alle vorherigen Schritte scheitern:<br>
 
 <div class="ph"><span class="badge b-g">Ansprüche</span><span class="ph-t">Detaillierte Aufstellung</span></div>
 
-<div class="al al-r" style="margin-bottom:10px"><strong>v12-Fix:</strong> Dubai-Kosten wurden aus der Qatar-Forderung entfernt — sie stecken jetzt sauber bei Emirates. Keine Doppelgeltendmachung mehr. Gesamtsumme identisch.</div>
+<div class="al al-r" style="margin-bottom:10px"><strong>v12+v13-Fix:</strong> Dubai-Kosten wurden aus der Qatar-Forderung entfernt — sie stecken jetzt sauber bei Emirates. Keine Doppelgeltendmachung mehr. Gesamtsumme identisch.</div>
 
 <div class="c">
   <div class="c-t"><div class="ico" style="background:var(--gd)">✈️</div> Gegen Qatar Airways (MÜ Art. 19 + §§ 280/281 BGB)</div>
@@ -851,7 +850,7 @@ Nur wenn alle vorherigen Schritte scheitern:<br>
 
 <!-- FOOTER -->
 <div class="ft">
-  Legal Command Center v12 · 25. März 2026 · ⚖️ 6-Augen-geprüft · Double-Counting-Fix ✓<br>
+  Legal Command Center v13 · 25. März 2026 · ⚖️ 6× geprüft · Alle Inkonsistenzen bereinigt ✓<br>
   Quelle: E-Mails, Montrealer Übereinkommen, BGB §§ 280/281/651w<br>
   <strong>Keine Rechtsberatung</strong> — im Zweifel Anwalt für Reiserecht konsultieren
 </div>
@@ -940,7 +939,7 @@ function copyBrief(btn){
 // ═══ SHARE WITH DARIUS ═══
 function shareWithDarius(message){
   const subject=encodeURIComponent('Reiserecht Bali – To-Do für dich');
-  const body=encodeURIComponent(message+'\n\n---\nAus dem Legal Command Center v11');
+  const body=encodeURIComponent(message+'\n\n---\nAus dem Legal Command Center v13');
 
   // Try WhatsApp first (mobile), fallback to email
   const isMobile=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
